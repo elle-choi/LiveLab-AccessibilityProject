@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 76ac21cc818953a4ca4ae5506c35e855
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BalloonGroup2
+    100002: BalloonGroup3
+    100004: BalloonGroup4
+    100006: MainBalloon_2
+    100008: MainBalloon_2 1
+    100010: MainBalloon_3
+    100012: MiniBalloon_1
+    100014: MiniBalloon_1 1
+    100016: MiniBalloon_10
+    100018: MiniBalloon_10 1
+    100020: MiniBalloon_11
+    100022: MiniBalloon_12
+    100024: MiniBalloon_13
+    100026: MiniBalloon_2
+    100028: MiniBalloon_2 1
+    100030: MiniBalloon_3
+    100032: MiniBalloon_3 1
+    100034: MiniBalloon_4
+    100036: MiniBalloon_4 1
+    100038: MiniBalloon_4 2
+    100040: MiniBalloon_5
+    100042: MiniBalloon_5 1
+    100044: MiniBalloon_6
+    100046: MiniBalloon_7
+    100048: MiniBalloon_7 1
+    100050: MiniBalloon_8
+    100052: MiniBalloon_9
+    100054: MiniBalloon_9 1
+    100056: //RootNode
+    400000: BalloonGroup2
+    400002: BalloonGroup3
+    400004: BalloonGroup4
+    400006: MainBalloon_2
+    400008: MainBalloon_2 1
+    400010: MainBalloon_3
+    400012: MiniBalloon_1
+    400014: MiniBalloon_1 1
+    400016: MiniBalloon_10
+    400018: MiniBalloon_10 1
+    400020: MiniBalloon_11
+    400022: MiniBalloon_12
+    400024: MiniBalloon_13
+    400026: MiniBalloon_2
+    400028: MiniBalloon_2 1
+    400030: MiniBalloon_3
+    400032: MiniBalloon_3 1
+    400034: MiniBalloon_4
+    400036: MiniBalloon_4 1
+    400038: MiniBalloon_4 2
+    400040: MiniBalloon_5
+    400042: MiniBalloon_5 1
+    400044: MiniBalloon_6
+    400046: MiniBalloon_7
+    400048: MiniBalloon_7 1
+    400050: MiniBalloon_8
+    400052: MiniBalloon_9
+    400054: MiniBalloon_9 1
+    400056: //RootNode
+    2100000: SmallREd
+    2100002: SmallBlue
+    2100004: LargeWhite
+    2100006: BunchBotton
+    2100008: Ribbon
+    2100010: SmallWhitr
+    2100012: LargeBlue
+    2100014: LargeRed
+    2300000: MainBalloon_2
+    2300002: MainBalloon_2 1
+    2300004: MainBalloon_3
+    2300006: MiniBalloon_1
+    2300008: MiniBalloon_1 1
+    2300010: MiniBalloon_10
+    2300012: MiniBalloon_10 1
+    2300014: MiniBalloon_11
+    2300016: MiniBalloon_12
+    2300018: MiniBalloon_13
+    2300020: MiniBalloon_2
+    2300022: MiniBalloon_2 1
+    2300024: MiniBalloon_3
+    2300026: MiniBalloon_3 1
+    2300028: MiniBalloon_4
+    2300030: MiniBalloon_4 1
+    2300032: MiniBalloon_4 2
+    2300034: MiniBalloon_5
+    2300036: MiniBalloon_5 1
+    2300038: MiniBalloon_6
+    2300040: MiniBalloon_7
+    2300042: MiniBalloon_7 1
+    2300044: MiniBalloon_8
+    2300046: MiniBalloon_9
+    2300048: MiniBalloon_9 1
+    3300000: MainBalloon_2
+    3300002: MainBalloon_2 1
+    3300004: MainBalloon_3
+    3300006: MiniBalloon_1
+    3300008: MiniBalloon_1 1
+    3300010: MiniBalloon_10
+    3300012: MiniBalloon_10 1
+    3300014: MiniBalloon_11
+    3300016: MiniBalloon_12
+    3300018: MiniBalloon_13
+    3300020: MiniBalloon_2
+    3300022: MiniBalloon_2 1
+    3300024: MiniBalloon_3
+    3300026: MiniBalloon_3 1
+    3300028: MiniBalloon_4
+    3300030: MiniBalloon_4 1
+    3300032: MiniBalloon_4 2
+    3300034: MiniBalloon_5
+    3300036: MiniBalloon_5 1
+    3300038: MiniBalloon_6
+    3300040: MiniBalloon_7
+    3300042: MiniBalloon_7 1
+    3300044: MiniBalloon_8
+    3300046: MiniBalloon_9
+    3300048: MiniBalloon_9 1
+    4300000: MiniBalloon_7
+    4300002: MiniBalloon_1
+    4300004: MiniBalloon_2
+    4300006: MiniBalloon_3
+    4300008: MiniBalloon_4
+    4300010: MiniBalloon_5
+    4300012: MiniBalloon_6
+    4300014: MainBalloon_3
+    4300016: MiniBalloon_7
+    4300018: MiniBalloon_4
+    4300020: MiniBalloon_8
+    4300022: MiniBalloon_9
+    4300024: MiniBalloon_10
+    4300026: MiniBalloon_12
+    4300028: MiniBalloon_13
+    4300030: MainBalloon_2
+    4300032: MiniBalloon_1
+    4300034: MiniBalloon_2
+    4300036: MiniBalloon_3
+    4300038: MiniBalloon_4
+    4300040: MiniBalloon_5
+    4300042: MiniBalloon_9
+    4300044: MiniBalloon_10
+    4300046: MiniBalloon_11
+    4300048: MainBalloon_2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

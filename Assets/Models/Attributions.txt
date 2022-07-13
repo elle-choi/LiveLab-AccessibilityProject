@@ -1,0 +1,120 @@
+https://github.com/ViveSoftware/ViveInputUtility-Unity/releases
+^ in case of blue screen 
+
+----------------------------------------------------------
+ROOM TEXTURES
+----------------------------------------------------------
+Wooden Texture,
+Small Wooden Shelf 
+https://www.reinerstilesets.de/ 
+
+Teal Wall Texture (wallsTextureNo9526)
+http://www.plaintextures.com/singletexture.php?urlcode=8hhGdEixA9BFfYdfKzhpNbT5ZmyFqMQQttOv9wCIDRPEkG%2FWPJKh4tnxTpiFEX9EZCI7Z0SktsYl0HBFsOPjgw%3D%3D
+
+Blue Wall Texture + Gradient
+http://www.plaintextures.com/singletexture.php?urlcode=X4jXoskmbieE27%2FC4aCjOAqQJK%2Foh7oWRIksrnJ3Bv7CM2UXP7K6WIJABaZG6vB%2FBKhSzYGqxy32jUKzqST9ug%3D%3D
+
+Red Wall Texture + Gradient
+http://www.plaintextures.com/singletexture.php?urlcode=DXfc992fBHwaUMcsmQCdBT236gM3QAHxPE%2BMRekvJNCroJeUo4gWlHU%2BjZqzNEsYYdCLGAysZ6a6G0Pn4Rmpwg%3D%3D
+
+White Ceiling Texture
+http://www.plaintextures.com/singletexture.php?urlcode=L0HFnC2X5jvM0JsDj4aRKpWV0lzla%2B0qPl02aP381yeB4yGp129t1w0HMO6M6ITL9eRQJ4yBHbBfGB85fSGc4w%3D%3D
+
+
+
+----------------------------------------------------------
+EXPERIMENT MARKERS
+----------------------------------------------------------
+
+target
+https://sketchfab.com/3d-models/target-hackathon-tournament-e2f631c75c83440887d2613fe4aeb84c
+
+paint circle
+https://www.sccpre.cat/pngs/558914/
+
+
+----------------------------------------------------------
+ROOM ARCHITECTURE
+----------------------------------------------------------
+
+HOUSE COLLECTION (floor sills)
+https://opengameart.org/content/modular-house-3d-models
+
+Wooden Door
+https://opengameart.org/content/wooden-squared-door
+
+Window
+https://opengameart.org/content/modular-house-3d-models 
+
+Shelf
+https://sketchfab.com/3d-models/beaumont-tall-6-level-shelf-100750-c27b59883bbb4b6ab785a74ada559db4
+
+----------------------------------------------------------
+X/Y Axis Items
+----------------------------------------------------------
+
+House plant
+https://opengameart.org/content/free-houseplants
+
+Books, Vase, Lamp, Sock
+https://www.reinerstilesets.de/graphics/3d-grafiken/3d-sonstiges/
+
+soccer ball
+https://sketchfab.com/3d-models/soccer-ball-80b94ea2406c4ff28b4120995764c6ed
+
+Flower Clock
+https://sketchfab.com/3d-models/wall-clock-1579e4608c6b4f908e6da24d3752f783
+
+Plastic Chair
+https://sketchfab.com/3d-models/vitra-eames-plastic-chair-0a45955e2328459d95f403cb00c08b3a
+
+Sconce
+https://sketchfab.com/3d-models/sconce-04547d663fe14f3b853e3b6341ef100e
+
+----------------------------------------------------------
+X Axis Items
+----------------------------------------------------------
+
+coat rack hooks
+https://sketchfab.com/3d-models/old-coat-rack-f7125e65dd004381aa3e9882ef74e963
+
+hanging shirt
+https://sketchfab.com/3d-models/hanging-shirt-by-camille-kleinman-117fc4a6e8304a858dfaf2adc2c782a0
+
+woven basket
+https://sketchfab.com/3d-models/basket-pqpm1000-418bc9b5d4a04ffabdfc65df242b67c9
+
+teddy bear
+https://sketchfab.com/3d-models/sitting-teddy-bear-6d523d60eaf14b4097bcc953db69f8d2
+
+hanging plant
+https://sketchfab.com/3d-models/flowers-petunia-white-74c653b4413f40ba8ec753004b2deea0
+
+basket ball
+https://sketchfab.com/3d-models/basket-bullet-10-lb-d18692ce01d74c368ab953812e3b80d0
+
+table lamp
+https://sketchfab.com/3d-models/taale-table-lamp-da2bf07f54484c5c867080415831f8bb
+
+oil painting
+https://sketchfab.com/3d-models/oil-painting-of-peaches-preview-991819338de04c399a9276313850a297
+
+balloons
+https://sketchfab.com/3d-models/balloon-bunch-44b6b58dd67b4f379c1484fa7fe46d99
+
+pumpkins
+https://sketchfab.com/3d-models/pumpkins-model-577dd8241f4846988e068aeefb189346
+
+*rope
+https://sketchfab.com/3d-models/rope-6429ddecad104f13b45b17062ccb9ed8
+
+
+----------------------------------------------------------
+NEW SHOES
+----------------------------------------------------------
+
+Shoes Viola A1
+https://sketchfab.com/3d-models/shoes-violet-8bd01d4db0b142dd918dd374de9b4c1b
+
+
+

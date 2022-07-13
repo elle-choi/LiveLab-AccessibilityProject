@@ -1,0 +1,4 @@
+SubjectID, Experiment, Height, Gender, Age, LocomotionRandomOrderId, TrialArray
+test, locima, , female, , 1, [see code]Trial, ObjectId, RealStartVectorX, RealStartVectorY, RealStartVectorZ, PerfectStartVectorX, PerfectStartVectorY, PerfectStartVectorZ, RealStartAngleX, RealStartAngleY, RealStartAngleZ, PerfectStartAngleX, PerfectStartAngleY, PerfectStartAngleZ, StartErrorX, StartErrorY, StartErrorZ, RealEndVectorX, RealEndVectorY, RealEndVectorZ, PerfectEndVectorX, PerfectEndVectorY, PerfectEndVectorZ, RealEndAngleX, RealEndAngleY, RealEndAngleZ, PerfectEndAngleX, PerfectEndAngleY, PerfectEndAngle, EndErrorX, EndErrorY, EndErrorZ, RealChangeX, RealChangeY, RealChangeZ, PerfectChangeX, PerfectChangeY, PerfectChangeZ, ChangeErrorX, ChangeErrorY, ChangeErrorZ, ElapsedTime
+ 
+LOCOMOTION

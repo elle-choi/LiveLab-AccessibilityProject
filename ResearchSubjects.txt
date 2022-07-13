@@ -1,0 +1,193 @@
+001,Lamya Jaygirdar,2/27/2018 10:05 PM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 36.03479 Max height reached 42.60099,Exp v- Height at start: 36.0347 Max height reached 55.70512,Exp rs- Height at start: 34.39161 Max height reached 70.44184,Exp r- Height at start: 36.03473 Max height reached 72.08537
+
+
+002,Walter Alexander Sid,2/28/2018 3:47 PM,With Slats: True,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 88.47002 Min height reached 70.44147,Exp vs- Height at start: 72.08495 Max height reached 90.10179 Min height reached 67.16582,Exp r- Height at start: 72.08493 Max height reached 93.52876 Min height reached 67.16577,Exp rs- Height at start: 72.08493 Max height reached 108.1261 Min height reached 70.29131
+
+
+
+003,Belinda Chiu,2/28/2018 5:18 PM,With Slats: True,Going Up: True,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 80.27392 Min height reached 72.08462,Exp rs- Height at start: 72.08493 Max height reached 93.37876 Min height reached 71.99702,Exp v- Height at start: 72.08494 Max height reached 86.82693 Min height reached 71.95634,Exp vs- Height at start: 72.08495 Max height reached 93.37776 Min height reached 71.91768
+
+
+
+004,Jessica Lo,2/28/2018 7:15 PM,With Slats: True,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 86.82664 Min height reached 71.58006,Exp r- Height at start: 72.08493 Max height reached 93.37779 Min height reached 71.95633,Exp vs- Height at start: 72.08495 Max height reached 96.65358 Min height reached 71.91768,Exp v- Height at start: 72.08494 Max height reached 103.2066 Min height reached 70.44141
+
+
+
+005,Tristan Irvin,2/28/2018 10:03 PM,With Slats: True,Going Up: False,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 73.72279 Min height reached 50.63538,Exp vs- Height at start: 72.08495 Max height reached 72.08496 Min height reached 44.23339,Exp r- Height at start: 72.08493 Max height reached 98.2971 Min height reached 71.75151 (Accidentally climbed up first),Exp rs- Height at start: 72.08493 Max height reached 72.08516 Min height reached 40.95733
+
+
+
+006,Akhlia Ashokan,3/1/2018 5:10 PM,With Slats: True,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 73.72272 Min height reached 58.98059,Exp r- Height at start: 72.08493 Max height reached 72.08495 Min height reached 50.63522,Exp vs- Height at start: 72.08495 Max height reached 73.72169 Min height reached 50.63553,Exp v- Height at start: 72.08494 Max height reached 72.08495 Min height reached 49.15257
+
+
+
+007,Jiayao Wang (she put run 4 answer in run 2),3/2/2018 3:22 PM,With Slats: True,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 75.36495 Min height reached 47.50938,Exp v- Height at start: 72.08494 Max height reached 83.55061 Min height reached 45.87663,Exp rs- Height at start: 72.08493 Max height reached 78.64198 Min height reached 27.83934,Exp r- Height at start: 72.08493 Max height reached 91.74512 Min height reached 22.93065
+
+
+
+008,Lily Williams,3/2/2018 5:13 PM,With Slats: True,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 42.60067,Exp rs- Height at start: 72.08493 Max height reached 72.08495 Min height reached 39.32466,Exp v- Height at start: 72.08494 Max height reached 72.08524 Min height reached 40.95738,Exp vs- Height at start: 72.08495 Max height reached 75.3653 Min height reached 39.32467
+
+
+
+009,Xiaymei Han,3/2/2018 9:03 PM,With Slats: True,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 86.82656 Min height reached 68.48069,Exp vs- Height at start: 72.08495 Max height reached 106.4818 Min height reached 71.91768,Exp r- Height at start: 72.08493 Max height reached 113.0379 Min height reached 70.44138,Exp rs- Height at start: 72.08493 Max height reached 111.4082 Min height reached 70.25225
+
+
+
+010,Yufei Yan,3/2/2018 10:35 PM,With Slats: True,Going Up: False,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 72.08509 Min height reached 58.98061,Exp vs- Height at start: 72.08495 Max height reached 75.3653 Min height reached 55.70465,Exp r- Height at start: 72.08493 Max height reached 73.72169 Min height reached 52.42862,Exp rs- Height at start: 72.08493 Max height reached 72.08502 Min height reached 45.87658
+
+
+
+011,Syed Rahman,3/11/2018 11:17 AM,With Slats: True,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 78.64219 Min height reached 67.16565,Exp  r- Height at start: 72.08493 Max height reached 81.9172 Min height reached 67.16556,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 47.50937,Exp v- Height at start: 72.08494 Max height reached 75.36623 Min height reached 57.21361
+
+012,Saquib Rahman,3/11/2018 12:35 PM,With Slats: True,Going Up: True,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 88.46919 Min height reached 67.16543,Exp rs- Height at start: 72.08493 Max height reached 93.37897 Min height reached 67.16532,Exp v- Height at start: 72.08494 Max height reached 83.55094 Min height reached 58.71363,Exp vs- Height at start: 72.08495 Max height reached 75.36615 Min height reached 45.87651
+
+
+013,Alade Malik,3/11/2018 4:12 PM,With Slats: True,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 72.08502 Min height reached 62.25668,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 57.33728,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 44.23334,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 53.91129
+
+
+014,Sami Halimi,3/11/2018 5:16 PM,With Slats: True,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 88.47015 Min height reached 68.80869,Exp r- Height at start: 72.08493 Max height reached 83.54993 Min height reached 62.25669,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 42.60068,Exp v- Height at start: 72.08494 Max height reached 88.47014 Min height reached 65.53284
+
+
+
+015,Thomas Stilson,3/11/2018 8:07 PM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 26.2069,Exp v- Height at start: 72.08494 Max height reached 86.82681 Min height reached 68.48069,Exp rs- Height at start: 72.08493 Max height reached 81.91818 Min height reached 67.16529,Exp r- Height at start: 72.08493 Max height reached 86.8259 Min height reached 67.16531
+
+
+
+016,James Deng,3/11/2018 9:18 PM,With Slats: True,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 16.3786,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 34.39137,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 42.60057,Exp r- Height at start: 72.08493 Max height reached 72.08495 Min height reached 42.60057
+
+
+
+
+017,Aiden Layer,3/12/2018 6:08 PM,With Slats: True,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 50.7854,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 45.87672,Exp v- Height at start: 72.08494 Max height reached 72.08507 Min height reached 42.60059,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 40.86297
+
+
+
+018,Akash Majumdar,3/12/2018 8:04 PM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 85.19397 Min height reached 65.53267,Exp v- Height at start: 72.08494 Max height reached 88.47004 Min height reached 65.53262,Exp rs- Height at start: 72.08493 Max height reached 101.5742 Min height reached 68.32423,Exp r- Height at start: 72.08493 Max height reached 111.4084 Min height reached 68.42033
+
+
+
+
+019,Pritchard,3/13/2018 11:08 AM,With Slats: True,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 93.37873 Min height reached 65.53304,Exp  vs- Height at start: 72.08495 Max height reached 98.29809 Min height reached 67.16564,Exp r- Height at start: 72.08493 Max height reached 103.207 Min height reached 67.16529,Exp rs- Height at start: 72.08493 Max height reached 103.2069 Min height reached 63.88959
+
+
+020,Tobi,3/13/2018 2:55 PM,With Slats: True,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 72.09972 Min height reached 54.0613,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 52.42854,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 50.78534,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 49.10756
+
+
+
+021,Epiphany,3/13/2018 4:06 PM,With Slats: True,Going Up: False,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 73.8737 Min height reached 39.32466,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 29.48264,Exp r- Height at start: 72.08493 Max height reached 72.08499 Min height reached 27.62569,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 21.28732
+
+
+
+022,Lin Fei (shoes had to be manually adjusted to device 3),3/14/2018 3:57 PM,With Slats: True,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 022,Lin Fei,3/14/2018 4:01 PM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 37.68132,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 37.68132,Exp rs- Height at start: 67.16563 Max height reached 72.08493 Min height reached 32.75855,Exp r- Height at start: 68.80899 Max height reached 72.08493 Min height reached 32.75855
+
+
+
+
+023,Anivarya Kumar,3/14/2018 5:06 PM,With Slats: False,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 47.50937,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 54.06136,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 52.42861,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 49.15253
+
+
+
+024,Kamil Fadel(r values not showing, climbed down first, then up),3/15/2018 5:47 PM,With Slats: True,Going Up: True,r-rs-v-vs,Exp  rs- Height at start: 72.08493 Max height reached 85.19413 Min height reached 65.53298,Exp v- Height at start: 72.08494 Max height reached 88.47012 Min height reached 65.53266,Exp vs- Height at start: 72.08495 Max height reached 88.47014 Min height reached 65.53258
+
+
+
+
+025,James(shoes had to be manually adjusted to device 3),3/15/2018 7:10 PM,With Slats: False,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 80.27497 Min height reached 60.61337,Exp v- Height at start: 72.08494 Max height reached 91.74612 Min height reached 65.53297,Exp rs- Height at start: 68.80892 Max height reached 93.37886 Min height reached 67.16563,Exp r- Height at start: 72.08493 Max height reached 93.37888 Min height reached 67.16531
+
+
+
+026,Lawrence Kwok,3/16/2018 3:41 PM,With Slats: False,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 91.74612 Min height reached 68.48068,Exp r- Height at start: 72.08493 Max height reached 98.29812 Min height reached 65.53262,Exp vs- Height at start: 72.08495 Max height reached 96.65477 Min height reached 68.35304,Exp v- Height at start: 72.08494 Max height reached 101.574 Min height reached 63.88986
+
+
+
+027,Sara,3/16/2018 6:26 PM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 83.55084 Min height reached 58.98079,Exp v- Height at start: 72.08494 Max height reached 95.02207 Min height reached 68.43943,Exp rs- Height at start: 72.08493 Max height reached 98.29808 Min height reached 67.16534,Exp r- Height at start: 72.08493 Max height reached 98.29822 Min height reached 67.16534
+
+
+
+028,Adi Preston,3/17/2018 9:35 AM,With Slats: True,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 76.9988 Min height reached 60.61355,Exp vs- Height at start: 72.08495 Max height reached 86.82676 Min height reached 67.16533,Exp r- Height at start: 72.08493 Max height reached 85.19418 Min height reached 62.2568,Exp rs- Height at start: 72.08493 Max height reached 88.47015 Min height reached 65.53305
+
+
+
+029,Cindy Lin Liu,3/17/2018 11:03 AM,With Slats: True,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 73.7227 Min height reached 50.78534,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 42.60057,Exp rs- Height at start: 72.08493 Max height reached 75.36588 Min height reached 47.50934,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 37.68133
+
+
+
+030,Kayleigh,3/17/2018 5:41 PM,With Slats: False,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 86.82691 Min height reached 65.53302,Exp r- Height at start: 72.08493 Max height reached 91.74633 Min height reached 62.25684,Exp vs- Height at start: 72.08495 Max height reached 96.65477 Min height reached 60.61347,Exp v- Height at start: 72.08494 Max height reached 101.5742 Min height reached 65.5331
+
+
+
+
+031,Carolyn Akers,3/17/2018 7:12 PM,With Slats: False,Going Up: True,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 76.99874 Min height reached 58.98098,Exp rs- Height at start: 72.08493 Max height reached 85.19405 Min height reached 65.53279,Exp v- Height at start: 72.08494 Max height reached 86.82683 Min height reached 63.8895,Exp vs- Height at start: 72.08495 Max height reached 86.82678 Min height reached 62.25684
+
+
+
+032,Rohith Raman,3/17/2018 8:39 PM,With Slats: True,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 80.27513 Min height reached 60.61361,Exp vs- Height at start: 72.08495 Max height reached 90.10273 Min height reached 60.61375,Exp r- Height at start: 72.08493 Max height reached 108.1261 Min height reached 54.06183,Exp rs- Height at start: 72.08493 Max height reached 113.0407 Min height reached 58.98081
+
+
+
+033,Umang,3/18/2018 11:06 AM,With Slats: True,Going Up: True,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 78.64207 Min height reached 67.16568,Exp v- Height at start: 72.08494 Max height reached 80.27486 Min height reached 67.16531,Exp rs- Height at start: 72.08493 Max height reached 81.9182 Min height reached 65.53282,Exp r- Height at start: 72.08493 Max height reached 83.55091 Min height reached 68.42033
+
+
+
+034,Ignatius Liu,3/18/2018 2:42 PM,With Slats: False,Going Up: True,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 101.574 Min height reached 53.91129,Exp rs- Height at start: 72.08493 Max height reached 124.5118 Min height reached 67.01544,Exp v- Height at start: 72.08494 Max height reached 129.4177 Min height reached 67.16534,Exp vs- Height at start: 72.08495 Max height reached 134.3368 Min height reached 65.53275
+
+
+
+035,Stephanie Thompson,3/18/2018 4:08 PM,With Slats: False,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 78.64188 Min height reached 57.33732,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 47.50937,Exp  r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 44.23326,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 42.60056
+
+036,Meghana Rao,3/18/2018 8:49 PM,With Slats: False,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 49.15258,Exp v- Height at start: 72.08494 Max height reached 73.72279 Min height reached 49.15254,Exp  rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 42.60056,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 44.23336
+
+037,Ali,3/19/2018 5:37 PM,With Slats: False,Going Up: False,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 44.23331,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 37.68139,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 36.03458,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 37.68136
+
+
+
+
+038,Zaynah Ajmal,3/19/2018 7:21 PM,With Slats: False,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 32.75864,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 26.20659,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 26.20659,Exp v- Height at start: 72.08494 Max height reached 73.72266 Min height reached 26.20661
+
+
+
+039,Lauren Branscombe,3/20/2018 11:08 AM,With Slats: False,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 37.68131,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 34.39131,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 34.39133,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 31.1153
+
+
+
+040,Jordan Bair,3/20/2018 12:19 PM,With Slats: False,Going Up: False,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 44.23333,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 34.3913,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 39.32457,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 24.56333
+
+
+
+041,Jack Murphy,3/20/2018 1:31 PM,With Slats: True,Going Up: True,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 83.55096 Min height reached 65.53294,Exp r- Height at start: 72.08493 Max height reached 85.19415 Min height reached 62.25677,Exp vs- Height at start: 72.08495 Max height reached 90.10285 Min height reached 62.25677,Exp v- Height at start: 72.08494 Max height reached 91.74609 Min height reached 68.43943
+
+
+
+042,Davin Bryant,3/20/2018 4:21 PM,With Slats: False,Going Up: True,v-vs-r-rs,Exp  v- Height at start: 72.08494 Max height reached 80.27477 Min height reached 68.48069,Exp vs- Height at start: 72.08495 Max height reached 81.91798 Min height reached 68.43945,Exp r- Height at start: 72.08493 Max height reached 91.74618 Min height reached 68.31088,Exp rs- Height at start: 72.08493 Max height reached 91.7462 Min height reached 63.88965
+
+
+
+043,Jason Lao,3/20/2018 5:19 PM,With Slats: True,Going Up: True,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 78.64212 Min height reached 67.16535,Exp rs- Height at start: 72.08493 Max height reached 80.27459 Min height reached 62.25702,Exp v- Height at start: 72.08494 Max height reached 86.82682 Min height reached 63.88964,Exp vs- Height at start: 72.08495 Max height reached 109.7619 Min height reached 67.16534
+
+
+
+044,Emir Farid,3/21/2018 1:13 PM,With Slats: True,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 72.08498 Min height reached 52.42862,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 47.50937,Exp vs- Height at start: 72.08495 Max height reached 73.72253 Min height reached 48.70565,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 44.23335
+
+
+
+045,Jude Franklin,3/21/2018 3:17 PM,With Slats: False,Going Up: False,vs-v-rs-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 40.95734,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 32.75859,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 29.48259,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 34.39129
+
+
+
+046,Gwendolyn Goins,3/21/2018 4:13 PM,With Slats: True,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 73.72292 Min height reached 58.98063,Exp rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 52.42866,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 55.40445,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 50.7853
+
+
+
+047,Abhi Nathan,3/21/2018 6:56 PM,With Slats: True,Going Up: False,rs-r-vs-v,Exp  rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 55.70469,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 49.15269,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 45.8766,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 44.23333
+
+
+
+048,Joo Hyeun Kim,3/21/2018 8:04 PM,With Slats: True,Going Up: False,r-rs-v-vs,Exp  r- Height at start: 72.08493 Max height reached 75.36578 Min height reached 52.42867,Exp rs- Height at start: 72.08493 Max height reached 78.64198 Min height reached 44.23334,Exp v- Height at start: 72.08494 Max height reached 77.12191 Min height reached 42.60065,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 37.68136
+
+
+
+500,wetfsdf,3/30/2018 1:00 PM,With Slats: True,Going Up: True,rs-vs-r-v,Exp  rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 68.48068,Exp vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 68.48071,Exp r- Height at start: 72.08493 Max height reached 72.08493 Min height reached 68.45953,Exp v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 68.48069
+
+
+
+500,raegvxd,3/30/2018 1:21 PM,With Slats: True,Going Up: True,rs-vs-r-v,Exp  rs- Height at start: 72.08493 501,sophie,3/30/2018 1:50 PM,With Slats: True,Going Up: True,vs-rs-v-r,Exp  vs- Height at start: 72.08495 Max height reached 72.08504 Min height reached 67.16592,Exp rs- Height at start: 72.08493 500,video,4/7/2018 12:46 PM,With Slats: True,Going Up: True,vs-r-rs-v,Exp  vs- Height at start: 72.08495 501,video,4/7/2018 12:47 PM,With Slats: True,Going Up: True,vs-r-rs-v,Exp  vs- Height at start: 72.08495 Max height reached 72.08495 Min height reached 40.95733,Exp r- Height at start: 72.08493 501,video2,4/7/2018 1:01 PM,With Slats: True,Going Up: True,vs-r-rs-v,Exp  vs- Height at start: 72.08495 501,randomname,4/8/2018 12:56 PM,With Slats: True,Going Up: True,v-rs-vs-r,Exp  v- Height at start: 72.08494 Max height reached 72.08494 Min height reached 18.01133,Exp rs- Height at start: 72.08493 501,agfia,4/8/2018 1:16 PM,With Slats: True,Going Up: True,rs-vs-v-r,Exp  rs- Height at start: 72.08493 Max height reached 72.08493 Min height reached 67.01542,Exp vs- Height at start: 72.08495 501,asdfsdf,4/8/2018 1:29 PM,With Slats: True,Going Up: True,rs-v-vs-r,Exp  rs- Height at start: 72.08493 Height at start: 72.08493 Height at start: 72.08493 Height at start: 72.08493 Height at start: 72.08493 Height at start: 72.08493 Height at start: 1.89 Height at start: 1.89 Height at start: 0 Height at start: 0 Height at start: 1.89 Height at start: 1.89 Height at start: 1.89 Height at start: 1.89 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: -2.68 Height at start: -2.68 Height at start: -2.68 Height at start: -2.68 Height at start: -2.68 Height at start: 1.89 Height at start: 1.89 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 Height at start: 0 
