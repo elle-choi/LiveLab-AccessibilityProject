@@ -73,6 +73,7 @@ public class FakeRandomSpawn : MonoBehaviour
    
     }
 
+    /*
     public void SpawnAllObjects()
     {
         for (int i = 0; i < objectsToSpawn.Count; i++)
@@ -85,4 +86,5 @@ public class FakeRandomSpawn : MonoBehaviour
             ///// and then kill the child whenever the user shouldn't see it 
         }
     }
+    */
 }
