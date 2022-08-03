@@ -74,6 +74,8 @@ public class StairSpawn : MonoBehaviour
         }
     }
 
+    /*
+
     // FIXME temporary pseudocode funcion 
     public void DeleteWhenStepped()
     {
@@ -82,5 +84,6 @@ public class StairSpawn : MonoBehaviour
             Destroy(spawnedObjecs[0]); // it will always have 1 in list bc they will always be destroyed on each step 
         }
     }
+    */
 
 }

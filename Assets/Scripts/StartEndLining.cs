@@ -19,7 +19,7 @@ public class StartEndLining : MonoBehaviour
             endIndication.SetActive(true);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.D))
         {
             startIndication.SetActive(false);
             endIndication.SetActive(false);

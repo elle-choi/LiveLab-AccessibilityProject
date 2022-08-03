@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartEndAudio : MonoBehaviour
 {
-    private AudioSource x; 
+   
+    public AudioSource startSound;
+    public AudioSource endSound;
 
     private void Start()
     {
@@ -12,17 +15,42 @@ public class StartEndAudio : MonoBehaviour
         endSound = GetComponent<AudioSource>();
     }
 
-    private void startEndAudio()
+    private void Update()
     {
-        // the start step should have a tag set to "Start"
-        if (other.CompareTag("Start"))
+        // FIXME: temporary code for now
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             startSound.Play();
         }
 
-        if (other.CompareTag("End"))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             endSound.Play();
         }
+
+
+        // FIXME: when bottom platform hit, start audio play; last step hit, end audio play
+        /*
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                //Select stage    
+                if (hit.transform.name == "BottomPlatform")
+                {
+                    startSound.Play();
+                }
+
+                if (hit.transform.name == "lastStair")
+                {
+                    endSound.Play();
+                }
+            }
+        }
+        */
+
     }
 }
