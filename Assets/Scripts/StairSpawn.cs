@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Spawn Stairs within this script
+
 public class StairSpawn : MonoBehaviour
 {
-    public Transform MovingWallsParent; 
-    public Transform StairSpawnParent;
+    public Transform WallsParent; 
     Stair PreviousStair;                // Stair struct instance to store useful information 
     Stair NextStair;
     public float YSpawnOffset; 
     public float ZSpawnOffset; 
+    public float tempNextStairLength;   
+
 
     public List<GameObject> ObjectsToSpawn;  // permanent list of possible objects to spawn
     //public List<GameObject> SpawnedObjects;  //  another list that stores all INSTANTIATED objects
@@ -36,10 +39,17 @@ public class StairSpawn : MonoBehaviour
         public int direction;           // 0 is down, 1 is up
         public int numberOfSteps;       // 5, 7, or 9 steps
 
+        public Vector3 spawnPoint1;
+        public Vector3 spawnPoint2;
+
         public float stairHeight;       
         public float stairLength;
+
         public float spawnPointY;       // y pos for next stair spawn
-        public float stairHeightDifference; 
+        //public float spawnPointZ;       // y pos for next stair spawn
+
+        public float stairHeightDifference;
+
 
 
         public Stair(Transform myTransform, int myDirection, int nextDirection, int nextNumberOfSteps) 
@@ -47,15 +57,15 @@ public class StairSpawn : MonoBehaviour
             this.direction = myDirection;
 
             Transform StepsParent = myTransform.GetChild(1);
-            this.numberOfSteps = StepsParent.childCount - 2; // 2 children are platforms. the rest are steps
-            //Debug.Log("prev num steps: " + numberOfSteps);
+            this.numberOfSteps = StepsParent.childCount - 2; // 2 children are platforms. the rest are steps            
             // Get references from stairs parent 
             Transform spawnPointsParent = myTransform.GetChild(0);
-            Vector3 spawnPoint1 = spawnPointsParent.GetChild(0).position;
-            Vector3 spawnPoint2 = spawnPointsParent.GetChild(1).position;
+            this.spawnPoint1 = spawnPointsParent.GetChild(0).position;
+            this.spawnPoint2 = spawnPointsParent.GetChild(1).position;
 
             SetStairHeightAndLength(spawnPoint1, spawnPoint2);
-            SetSpawnPointY(spawnPoint1, spawnPoint2, nextDirection, nextNumberOfSteps);
+            if (nextNumberOfSteps !=0) // if this is zero, then there is no next step yet. 
+                SetSpawnPointY(spawnPoint1, spawnPoint2, nextDirection, nextNumberOfSteps);
         }
 
 
@@ -93,31 +103,49 @@ public class StairSpawn : MonoBehaviour
             stairHeightDifference = 0f;
             if (nextNumberOfSteps > numberOfSteps)
             {
-                stairHeightDifference = -(nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
                 Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
             }
             else if (nextNumberOfSteps < numberOfSteps)
             {
-                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f; // HALEY MAKE THIS NEGATIVE TO FIX BACK
                 Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
             }
 
+            /*if (nextNumberOfSteps > numberOfSteps || nextNumberOfSteps < numberOfSteps)
+            {
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
+            }*/
+            // - , +
+            // - , +
 
             if (directionIndex == 0)
             {         // both down
-                this.spawnPointY = bot_pos;
-                if (nextNumberOfSteps > numberOfSteps) // messy redundant.. 
-                    this.spawnPointY += stairHeightDifference - stairHeight;
-                else if (nextNumberOfSteps < numberOfSteps)
-                    this.spawnPointY -= stairHeightDifference;
-                else
-                    this.spawnPointY = bot_pos - stairHeight;
+                this.spawnPointY = bot_pos - stairHeight;
+                if (nextNumberOfSteps > numberOfSteps || nextNumberOfSteps < numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference);
+                
+                /*
+                if (nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference); 
+                else if (nextNumberOfSteps < numberOfSteps) 
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference);  
+                */
 
+                /*
+                if (nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + Mathf.Abs(stairHeightDifference));
+                else if (nextNumberOfSteps < numberOfSteps) // || nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight - Mathf.Abs(stairHeightDifference));  //(stairHeight - Mathf.Abs(stairHeightDifference)); 
+                */
             }
             else if (directionIndex == 1)       // one down; one up 
             {
-                //Debug.Log("SpawnPoint Bug: " + bot_pos + ". Add difference in stair height...: " + temp);
-                this.spawnPointY = bot_pos + stairHeightDifference;
+                if (direction == 0 && nextDirection ==1) // prev=down and next=up
+                    this.spawnPointY = bot_pos;
+                else
+                    this.spawnPointY = bot_pos - stairHeightDifference; // - og
             }
             else if (directionIndex == 2)       // both up
                 this.spawnPointY = top_pos;           
@@ -131,9 +159,15 @@ public class StairSpawn : MonoBehaviour
         YSpawnOffset = 0f; 
         ZSpawnOffset = 0f;        
         isWalkingClockwise = false;
+        // A bunch of static lists for controlled testing
+        //StairConditionArray = new int[] { 1, 1, 2, 2, 1, 1, 2, 2, 1 }; // temporary static array 
+        //StairConditionArray = new int[] { 1,3,3,3,3, 1,1,3,3,3,3 };
         //StairConditionArray = new int[] { 1,1,1,3,3,3,1,1,1 }; // temporary static array 
-        StairConditionArray = new int[] { 1,4,3,1,2,4,2,1,3,2,3,4,1 }; // temporary static array 
-        //StairConditionArray = new int[] { 1,1,2,2,1,1,2,2,1 }; // temporary static array 
+        //StairConditionArray = new int[] { 1,4,3,1,2,4,2,1,3,2,3,4,1 }; // temporary static array 
+        //StairConditionArray = new int[] {4,1,3,2,4,4,4,1,3,2,4,4,3,3,1 }; // temporary static array 
+        //StairConditionArray = new int[] { 5,5,3,3,5,5,3,1,5,1,5};         // all ups
+        //StairConditionArray = new int[] { 6,6,2,2,4,4,2,2,4,6,2, 6, 4};   // all downs
+        StairConditionArray = new int[] { 6,3,1,6,5,2,3,5,4,6,1,5};   // all
 
 
         //sRandomizeIntegerList(); // create a randomized list in the beginning
@@ -155,19 +189,43 @@ public class StairSpawn : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             SpawnNextStair();
-            MoveWalls(); // HALEY: Temporary! This should move with player camera
-
-            /*
-            int index = numList[0];
-            Instantiate(objectsToSpawn[index], location[index].position, Quaternion.identity);
-            Debug.Log("Object #" + index + " Instantiated.");
-
-            // FIXME? record already spawned stairs
-            spawnedObjects.Add(objectsToSpawn[index]);
-
-            numList.RemoveAt(0);*/
+            ScaleWalls(); 
+            MoveWalls(); 
         }
 
+    }
+
+    // Warp walls to match stairwell dimensions. Discerte update when each stair is updated. 
+    public void ScaleWalls()
+    {
+        // Update the scale of the outer walls that cusp the stair steps (X +,-) 
+        Transform XWallsParent = WallsParent.GetChild(0);       // Name: Walls X
+        Vector3 XScale1 = XWallsParent.GetChild(0).localScale;  // X+ 
+        Vector3 XScale2 = XWallsParent.GetChild(1).localScale;  // X-
+
+        float scaleFactor = NextStair.stairLength * 0.1f; 
+        XWallsParent.GetChild(0).localScale = new Vector3(scaleFactor, XScale1.y, XScale1.z);    // Z+ 
+        XWallsParent.GetChild(1).localScale = new Vector3(scaleFactor, XScale2.y, XScale2.z);   // Z-
+
+        // Update the Z scale of the inner walls (a large cube object) to cover the inside of the stairwell even when stair length varies
+        Transform InnerWalls = WallsParent.GetChild(2);         // Name: Inner Walls
+        scaleFactor = NextStair.stairLength - 2.4f;             // each plaform in the stairwell has a width of 1.2
+        InnerWalls.localScale = new Vector3(InnerWalls.localScale.x, InnerWalls.localScale.y, scaleFactor); 
+    }
+
+    // Move walls as the player traverses the stairs and as the stairs spawn. Continuous update.
+    public void MoveWalls()
+    {
+        // Offset Walls parent Y and Z to compensate for stair spawning (up/down = Y , lateral drift = Z) 
+        float ypos = transform.GetChild(transform.childCount - 1).position.y;
+        WallsParent.position = new Vector3(0f, ypos, ZSpawnOffset);     // HALEY: MAY  NEED TO MOVE THIS ELSWHERE FOR VR
+
+        // Ofset position of near and far Z walls to compensate for variable wall lengths
+        // Update the position of the near and far outer walls (Z +,-) based on current stair length 
+        Transform ZWallsParent = WallsParent.GetChild(1); // Name: Walls Z
+        tempNextStairLength = NextStair.stairLength;
+        ZWallsParent.GetChild(0).localPosition = new Vector3(0f, 0f, NextStair.stairLength / 2f);    // Z+ 
+        ZWallsParent.GetChild(1).localPosition = new Vector3(0f, 0f, -NextStair.stairLength / 2f);   // Z-
     }
 
     // Where: 
@@ -184,10 +242,13 @@ public class StairSpawn : MonoBehaviour
         if (currentTrial == totalTrials - 1)
             return;
 
+        GameObject spawnedStair; // temporary reference to new stair GO
+
         // Determine position of spawned item
         Vector3 spawn_position = new Vector3(1.1f, 0f, 0f);
         Quaternion spawn_orientation = Quaternion.identity;
         string stair_setting = "Trial [" + currentTrial + "] ";
+
 
         ///////////////////////////////////////////////////////////
 
@@ -199,97 +260,116 @@ public class StairSpawn : MonoBehaviour
         int numberOfSteps;
         switch (StairConditionArray[currentTrial])
         {
-            case 1:
+            case 1: // case 2:
                 // 5-step up
                 stair_setting += "5 step-up - ";
                 objectIndex = 0;
                 numberOfSteps = 5;
-                if (currentTrial % 2 != 0)
-                {
-                    stair_setting += " odd. flip y.";
-                    spawn_orientation *= Quaternion.Euler(0, 180, 0); // y flip -180 point down
-                }
                 break;
             case 2:
                 // 5-step down
                 stair_setting += "5 step-down - ";
                 objectIndex = 0;
                 numberOfSteps = 5;
-                if (currentTrial % 2 == 0)
-                {
-                    stair_setting += " even. flip y.";
-                    spawn_orientation *= Quaternion.Euler(0, 180, 0); // y flip -180 point down
-                }
                 break;
-            case 3:                     // HALEY: REDUNDANT CODE... Is it needed? (e.g., for wall adjustment maybe)
+            case 3: // case 4:                    // HALEY: REDUNDANT CODE... Is it needed? (e.g., for wall adjustment maybe)
                 // 7-step up
                 stair_setting += "7 step-up - ";
                 objectIndex = 1;
                 numberOfSteps = 7;
-                if (currentTrial % 2 != 0)
-                {
-                    stair_setting += " odd. flip y.";
-                    spawn_orientation *= Quaternion.Euler(0, 180, 0); // y flip -180 point down
-                }
                 break;
-            case 4:
+            case 4: 
                 // 7-step down
                 stair_setting += "7 step-down - ";
                 objectIndex = 1;
                 numberOfSteps = 7;
-                if (currentTrial % 2 == 0)
-                {
-                    stair_setting += " even. flip y.";
-                    spawn_orientation *= Quaternion.Euler(0, 180, 0); // y flip -180 point down
-                }
+                break;
+            case 5: // case 6:                    
+                // 9-step up
+                stair_setting += "9 step-up - ";
+                objectIndex = 2;
+                numberOfSteps = 9;
+                break;
+            case 6:
+                // 9-step down
+                stair_setting += "9 step-down - ";
+                objectIndex = 2;
+                numberOfSteps = 9;
                 break;
             default:
                 objectIndex = 0;
                 spawn_position.y = 0f;
-                numberOfSteps = 5;
+                numberOfSteps = 10;
                 Debug.Log("Error?");
                 break;
         }
 
-        // X position = -1.1 or +1.1        // Current CLOCKWISE / COUNTERCLOCKWISE SOLUTION 
+        ///////////////////////////////////////////////////////////////////////////////////////
+        //  Set New Stair Spawn Orientation 
+        ///////////////////////////////////////////////////////////////////////////////////////                
+        // Rotate (Y) new stairs to continue stairwell circle 
+        // Flip stairs by 180 degrees on even trials if steps go down
+        if (currentTrial %2 == 0 && StairConditionArray[currentTrial] %2 == 0)        
+            spawn_orientation *= Quaternion.Euler(0, 180, 0); 
+        // Flip stairs by 180 degrees on odd trials if steps go up
+        else if (currentTrial %2 != 0 && StairConditionArray[currentTrial] %2 != 0)
+            spawn_orientation *= Quaternion.Euler(0, 180, 0);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        //  Set New Stair Spawn Position 
+        ///////////////////////////////////////////////////////////////////////////////////////       
+        // Shift (X) position of new stairs to opposite side of stairwell. The size of the area between each stair pair is 1.1m        
         spawn_position.x = 1.1f;
-            if (currentTrial % 2 != 0)    // JUST FLIP PARENT INSTEAD 
-            {
-                spawn_position.x *= -1;  // move -x to spawn left when walking counter-clockwise 
-            }
+        if (currentTrial % 2 != 0)    // JUST FLIP PARENT INSTEAD IF WANT CLOCKWISE/COUNTERCLOCKWISE 
+        {
+            spawn_position.x *= -1;  // move -x to spawn left when walking counter-clockwise 
+        }
 
+        // If this is not the first trial, then calculate Y and Z posiion offsets for the new stair
+        // based on the previous stair's position, length, height, etc. 
+        int prev_direction, next_direction;
 
-        // PREVIOUS STAIR MEASURES
         if (currentTrial != 0)
         {
 
-            // count children if >2 then delete the first (oldest) child
-            if (StairSpawnParent.childCount >= 2)
-                DestroyImmediate(StairSpawnParent.GetChild(0).gameObject);
+            // We only want 2 stairs to be in the scenet at a time. Count the current number of stair spawns.
+            // Destroy the oldest child when >=2!
+            if (transform.childCount >= 2)
+                DestroyImmediate(transform.GetChild(0).gameObject);
 
-
-            // Get current (previous) stair transform and data
-            ////////////////////////////////////////////////////////////////////////////////////////////
-            Transform prev_stair = StairSpawnParent.GetChild(0).transform;
-            // Did prev stair point up or down? Even StairCondition indexes go down.
-            // ?: operator works like   "condition ? consequent : alternative" 
-            int prev_direction = (StairConditionArray[currentTrial - 1] % 2 == 0) ? 0 : 1;
-            int next_direction = (StairConditionArray[currentTrial] % 2 == 0) ? 0 : 1;
+            // Get the previous stair transform and relevant information. Use Stair Class'
+            // to calculate spawn point information, stair height, stair length, etc. 
+            Transform prev_stair = transform.GetChild(0).transform;
+            prev_direction = (StairConditionArray[currentTrial - 1] % 2 == 0) ? 0 : 1;              // ?: operator works like   "condition ? consequent : alternative" 
+            next_direction = (StairConditionArray[currentTrial] % 2 == 0) ? 0 : 1;
             PreviousStair = new Stair(prev_stair, prev_direction, next_direction, numberOfSteps);
 
-            spawn_position.y = PreviousStair.spawnPointY;
-            YSpawnOffset += PreviousStair.stairHeightDifference;
+            //HALEY TEMPORARY REMOVE LATER
+            //tempNextStairLength = PreviousStair.stairLength;
 
-            float temp = (numberOfSteps - PreviousStair.numberOfSteps) / 2 * 0.3f;
-            if (currentTrial % 2 != 0)    
-                ZSpawnOffset += temp;
+            // Get current and cumulative Y Offset
+            YSpawnOffset = PreviousStair.spawnPointY;           //  HALEY: Keep this. Use it to move walls later.. maybe
+            spawn_position.y = YSpawnOffset;
+
+            // Get current and cumulative Z Offset
+            float currentZOffset = (numberOfSteps - PreviousStair.numberOfSteps) / 2 * 0.3f;
+            if (currentTrial % 2 != 0)
+                ZSpawnOffset += currentZOffset;
             else
-                ZSpawnOffset -= temp;
-
-            //Debug.Log("Add to ZOffset: " +temp);
+                ZSpawnOffset -= currentZOffset;
             spawn_position.z = ZSpawnOffset;
 
-            
+            //Debug.Log("NumSteps: [" + PreviousStair.numberOfSteps + ", " + numberOfSteps + "] .. ZOffset: " + temp);
+            spawnedStair = Instantiate(ObjectsToSpawn[objectIndex], spawn_position, spawn_orientation, transform);
+        }
+        else {
+            spawnedStair = Instantiate(ObjectsToSpawn[objectIndex], spawn_position, spawn_orientation, transform);
+
+            Transform prev_stair = transform.GetChild(0).transform;
+            prev_direction = (StairConditionArray[0] % 2 == 0) ? 0 : 1;              // ?: operator works like   "condition ? consequent : alternative" 
+            next_direction = (StairConditionArray[1] % 2 == 0) ? 0 : 1;
+            PreviousStair = new Stair(prev_stair, prev_direction, next_direction, numberOfSteps);
         }
 
         // Shift ZSpawnOffset for stair spawns. Each stair length (5,7,9 steps) has an 0.3m difference     
@@ -297,28 +377,15 @@ public class StairSpawn : MonoBehaviour
         // no... for walls I really need the actual length of the stairs... 
         // numberOfSteps - PreviousStair.numberOfSteps; 
 
-
-
+        NextStair = new Stair(spawnedStair.transform, next_direction, 0, 0);
+        
+        // Finally, we spawn the stair and increment the trial count
         Debug.Log(stair_setting);
-        Instantiate(ObjectsToSpawn[objectIndex], spawn_position, spawn_orientation, StairSpawnParent);
-        //PreviousStair
-        //int direction;          // 0 is down, 1 is up
-        //int numberOfSteps;      // 5, 7, or 9 steps
-        //float spawnPoint;       // y pos for next stair spawn
-
-
         currentTrial++; 
-
+        
     }
 
-    // Move walls as the player traverses the stairs
-    public void MoveWalls()
-    {
-        float ypos = StairSpawnParent.GetChild(StairSpawnParent.childCount - 1).position.y;
-        MovingWallsParent.position = new Vector3(0f, ypos, 0f);
-        //Debug.Log(MovingWallsParent.position.y);
 
-    }
 
     public void ClockwiseToggle()
     {
@@ -326,11 +393,11 @@ public class StairSpawn : MonoBehaviour
         Debug.Log("Toggle Clockwise! Counterclockise = " + isWalkingClockwise);
         Debug.Log("NOTICE: Now steps down = steps up. And vice versa!! ");
 
-        // Flip StairSpawnParent 180 degrees
-        StairSpawnParent.rotation *= Quaternion.Euler(0, 180, 0);  
+        // Flip transform 180 degrees
+        transform.rotation *= Quaternion.Euler(0, 180, 0);  
 
         // Slide Blocking Walls in the opposite X direction by multiplying by -1
-        Transform BlockingWallsParent = MovingWallsParent.GetChild(0);
+        Transform BlockingWallsParent = WallsParent.GetChild(0);
         foreach (Transform child in BlockingWallsParent)
         {
             child.position = new Vector3(child.position.x*-1f, child.position.y, child.position.z);
