@@ -93,31 +93,49 @@ public class StairSpawn : MonoBehaviour
             stairHeightDifference = 0f;
             if (nextNumberOfSteps > numberOfSteps)
             {
-                stairHeightDifference = -(nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
                 Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
             }
             else if (nextNumberOfSteps < numberOfSteps)
             {
-                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f; // HALEY MAKE THIS NEGATIVE TO FIX BACK
                 Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
             }
 
+            /*if (nextNumberOfSteps > numberOfSteps || nextNumberOfSteps < numberOfSteps)
+            {
+                stairHeightDifference = (nextNumberOfSteps - numberOfSteps) / 2 * 0.3f;
+                Debug.Log("Prev step count: " + numberOfSteps + ". Next step count: " + nextNumberOfSteps + ". HeightOffset: " + stairHeightDifference);
+            }*/
+            // - , +
+            // - , +
 
             if (directionIndex == 0)
             {         // both down
-                this.spawnPointY = bot_pos;
-                if (nextNumberOfSteps > numberOfSteps) // messy redundant.. 
-                    this.spawnPointY += stairHeightDifference - stairHeight;
-                else if (nextNumberOfSteps < numberOfSteps)
-                    this.spawnPointY -= stairHeightDifference;
-                else
-                    this.spawnPointY = bot_pos - stairHeight;
+                this.spawnPointY = bot_pos - stairHeight;
+                if (nextNumberOfSteps > numberOfSteps || nextNumberOfSteps < numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference);
+                
+                /*
+                if (nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference); 
+                else if (nextNumberOfSteps < numberOfSteps) 
+                    this.spawnPointY = bot_pos - (stairHeight + stairHeightDifference);  
+                */
 
+                /*
+                if (nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight + Mathf.Abs(stairHeightDifference));
+                else if (nextNumberOfSteps < numberOfSteps) // || nextNumberOfSteps > numberOfSteps)
+                    this.spawnPointY = bot_pos - (stairHeight - Mathf.Abs(stairHeightDifference));  //(stairHeight - Mathf.Abs(stairHeightDifference)); 
+                */
             }
             else if (directionIndex == 1)       // one down; one up 
             {
-                //Debug.Log("SpawnPoint Bug: " + bot_pos + ". Add difference in stair height...: " + temp);
-                this.spawnPointY = bot_pos + stairHeightDifference;
+                if (direction == 0 && nextDirection ==1) // prev=down and next=up
+                    this.spawnPointY = bot_pos;
+                else
+                    this.spawnPointY = bot_pos - stairHeightDifference; // - og
             }
             else if (directionIndex == 2)       // both up
                 this.spawnPointY = top_pos;           
@@ -132,7 +150,8 @@ public class StairSpawn : MonoBehaviour
         ZSpawnOffset = 0f;        
         isWalkingClockwise = false;
         //StairConditionArray = new int[] { 1,1,1,3,3,3,1,1,1 }; // temporary static array 
-        StairConditionArray = new int[] { 1,4,3,1,2,4,2,1,3,2,3,4,1 }; // temporary static array 
+        //StairConditionArray = new int[] { 1,4,3,1,2,4,2,1,3,2,3,4,1 }; // temporary static array 
+        StairConditionArray = new int[] {4,1,3,2,4,4,4,1,3,2,4,4,3,3,1 }; // temporary static array 
         //StairConditionArray = new int[] { 1,1,2,2,1,1,2,2,1 }; // temporary static array 
 
 
@@ -278,7 +297,8 @@ public class StairSpawn : MonoBehaviour
             PreviousStair = new Stair(prev_stair, prev_direction, next_direction, numberOfSteps);
 
             spawn_position.y = PreviousStair.spawnPointY;
-            YSpawnOffset += PreviousStair.stairHeightDifference;
+            //YSpawnOffset += PreviousStair.stairHeightDifference;
+            YSpawnOffset = PreviousStair.spawnPointY; 
 
             float temp = (numberOfSteps - PreviousStair.numberOfSteps) / 2 * 0.3f;
             if (currentTrial % 2 != 0)    
