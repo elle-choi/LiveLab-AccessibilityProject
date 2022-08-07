@@ -17,7 +17,35 @@ public class StartEndAudio : MonoBehaviour
 
     private void Update()
     {
-        /*
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                if (hitInfo.collider.gameObject.tag == "startSound")
+                {
+                    startSound.Play(0);
+                }
+                if (hitInfo.collider.gameObject.tag == "endSound")
+                {
+                    endSound.Play(0);
+                }
+            }
+        }
+    }
+
+    /*
+    private void OnMouseEnter()
+    {
+        
+    }
+    */
+
+    /*
+    private void Update()
+    {
         // FIXME: temporary code for now
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -29,30 +57,9 @@ public class StartEndAudio : MonoBehaviour
         {
             endSound.Play(0);
         }
-        */
 
-        // FIXME: when bottom platform hit, start audio play; last step hit, end audio play
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                //Select stage    
-                if (hit.transform.name == "BottomPlatform")
-                {
-                    startSound.Play();
-                }
-
-                if (hit.transform.name == "lastStair")
-                {
-                    endSound.Play();
-                }
-            }
-        }
-        
-
+        // FIXME: when bottom platform hit, start audio play; last step hit, end audio play 
     }
+    */
+
 }
