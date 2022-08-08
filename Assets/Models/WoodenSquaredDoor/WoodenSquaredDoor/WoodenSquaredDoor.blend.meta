@@ -1,97 +1,278 @@
 fileFormatVersion: 2
 guid: d93bf535a5e2d0b469fcb854ab40cf63
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bone
-    100002: Bone_end
-    100004: Camera
-    100006: EscutcheonPlate.Above
-    100008: EscutcheonPlate.Above.Knob
-    100010: EscutcheonPlate.Bellow
-    100012: FacePlate
-    100014: HingesWings.Fixed
-    100016: HingesWings.Movable
-    100018: HingesWings.Movable.Armature
-    100020: Lamp
-    100022: StrikePlate
-    100024: WoodenKnocker
-    100026: //RootNode
-    100028: WoodenSquaredDoor
-    100030: EscutcheonPlate_Above
-    100032: EscutcheonPlate_Above_Knob
-    100034: EscutcheonPlate_Bellow
-    100036: HingesWings_Fixed
-    100038: HingesWings_Movable
-    100040: HingesWings_Movable_Armature
-    400000: Bone
-    400002: Bone_end
-    400004: Camera
-    400006: EscutcheonPlate.Above
-    400008: EscutcheonPlate.Above.Knob
-    400010: EscutcheonPlate.Bellow
-    400012: FacePlate
-    400014: HingesWings.Fixed
-    400016: HingesWings.Movable
-    400018: HingesWings.Movable.Armature
-    400020: Lamp
-    400022: StrikePlate
-    400024: WoodenKnocker
-    400026: //RootNode
-    400028: WoodenSquaredDoor
-    400030: EscutcheonPlate_Above
-    400032: EscutcheonPlate_Above_Knob
-    400034: EscutcheonPlate_Bellow
-    400036: HingesWings_Fixed
-    400038: HingesWings_Movable
-    400040: HingesWings_Movable_Armature
-    2000000: Camera
-    2300000: EscutcheonPlate.Above
-    2300002: EscutcheonPlate.Above.Knob
-    2300004: EscutcheonPlate.Bellow
-    2300006: FacePlate
-    2300008: HingesWings.Fixed
-    2300010: HingesWings.Movable
-    2300012: StrikePlate
-    2300014: WoodenKnocker
-    2300016: WoodenSquaredDoor
-    2300018: EscutcheonPlate_Above
-    2300020: EscutcheonPlate_Above_Knob
-    2300022: EscutcheonPlate_Bellow
-    2300024: HingesWings_Fixed
-    3300000: EscutcheonPlate.Above
-    3300002: EscutcheonPlate.Above.Knob
-    3300004: EscutcheonPlate.Bellow
-    3300006: FacePlate
-    3300008: HingesWings.Fixed
-    3300010: HingesWings.Movable
-    3300012: StrikePlate
-    3300014: WoodenKnocker
-    3300016: WoodenSquaredDoor
-    3300018: EscutcheonPlate_Above
-    3300020: EscutcheonPlate_Above_Knob
-    3300022: EscutcheonPlate_Bellow
-    3300024: HingesWings_Fixed
-    4300000: WoodenKnocker
-    4300002: StrikePlate
-    4300004: HingesWings.Movable
-    4300006: WoodenSquaredDoor
-    4300008: FacePlate
-    4300010: EscutcheonPlate.Above
-    4300012: EscutcheonPlate.Above.Knob
-    4300014: EscutcheonPlate.Bellow
-    4300016: HingesWings.Fixed
-    4300018: HingesWings_Fixed
-    4300020: HingesWings_Movable
-    4300022: EscutcheonPlate_Above
-    4300024: EscutcheonPlate_Above_Knob
-    4300026: EscutcheonPlate_Bellow
-    7400000: HingesWings.Movable.Armature|HingesWings.Movable.ArmatureAction
-    7400002: Default Take
-    7400004: HingesWings_Movable_ArmatureAction
-    9500000: //RootNode
-    10800000: Lamp
-    13700000: HingesWings_Movable
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone
+  - first:
+      1: 100002
+    second: Bone_end
+  - first:
+      1: 100004
+    second: Camera
+  - first:
+      1: 100006
+    second: EscutcheonPlate.Above
+  - first:
+      1: 100008
+    second: EscutcheonPlate.Above.Knob
+  - first:
+      1: 100010
+    second: EscutcheonPlate.Bellow
+  - first:
+      1: 100012
+    second: FacePlate
+  - first:
+      1: 100014
+    second: HingesWings.Fixed
+  - first:
+      1: 100016
+    second: HingesWings.Movable
+  - first:
+      1: 100018
+    second: HingesWings.Movable.Armature
+  - first:
+      1: 100020
+    second: Lamp
+  - first:
+      1: 100022
+    second: StrikePlate
+  - first:
+      1: 100024
+    second: WoodenKnocker
+  - first:
+      1: 100026
+    second: //RootNode
+  - first:
+      1: 100028
+    second: WoodenSquaredDoor
+  - first:
+      1: 100030
+    second: EscutcheonPlate_Above
+  - first:
+      1: 100032
+    second: EscutcheonPlate_Above_Knob
+  - first:
+      1: 100034
+    second: EscutcheonPlate_Bellow
+  - first:
+      1: 100036
+    second: HingesWings_Fixed
+  - first:
+      1: 100038
+    second: HingesWings_Movable
+  - first:
+      1: 100040
+    second: HingesWings_Movable_Armature
+  - first:
+      4: 400000
+    second: Bone
+  - first:
+      4: 400002
+    second: Bone_end
+  - first:
+      4: 400004
+    second: Camera
+  - first:
+      4: 400006
+    second: EscutcheonPlate.Above
+  - first:
+      4: 400008
+    second: EscutcheonPlate.Above.Knob
+  - first:
+      4: 400010
+    second: EscutcheonPlate.Bellow
+  - first:
+      4: 400012
+    second: FacePlate
+  - first:
+      4: 400014
+    second: HingesWings.Fixed
+  - first:
+      4: 400016
+    second: HingesWings.Movable
+  - first:
+      4: 400018
+    second: HingesWings.Movable.Armature
+  - first:
+      4: 400020
+    second: Lamp
+  - first:
+      4: 400022
+    second: StrikePlate
+  - first:
+      4: 400024
+    second: WoodenKnocker
+  - first:
+      4: 400026
+    second: //RootNode
+  - first:
+      4: 400028
+    second: WoodenSquaredDoor
+  - first:
+      4: 400030
+    second: EscutcheonPlate_Above
+  - first:
+      4: 400032
+    second: EscutcheonPlate_Above_Knob
+  - first:
+      4: 400034
+    second: EscutcheonPlate_Bellow
+  - first:
+      4: 400036
+    second: HingesWings_Fixed
+  - first:
+      4: 400038
+    second: HingesWings_Movable
+  - first:
+      4: 400040
+    second: HingesWings_Movable_Armature
+  - first:
+      20: 2000000
+    second: Camera
+  - first:
+      23: 2300000
+    second: EscutcheonPlate.Above
+  - first:
+      23: 2300002
+    second: EscutcheonPlate.Above.Knob
+  - first:
+      23: 2300004
+    second: EscutcheonPlate.Bellow
+  - first:
+      23: 2300006
+    second: FacePlate
+  - first:
+      23: 2300008
+    second: HingesWings.Fixed
+  - first:
+      23: 2300010
+    second: HingesWings.Movable
+  - first:
+      23: 2300012
+    second: StrikePlate
+  - first:
+      23: 2300014
+    second: WoodenKnocker
+  - first:
+      23: 2300016
+    second: WoodenSquaredDoor
+  - first:
+      23: 2300018
+    second: EscutcheonPlate_Above
+  - first:
+      23: 2300020
+    second: EscutcheonPlate_Above_Knob
+  - first:
+      23: 2300022
+    second: EscutcheonPlate_Bellow
+  - first:
+      23: 2300024
+    second: HingesWings_Fixed
+  - first:
+      33: 3300000
+    second: EscutcheonPlate.Above
+  - first:
+      33: 3300002
+    second: EscutcheonPlate.Above.Knob
+  - first:
+      33: 3300004
+    second: EscutcheonPlate.Bellow
+  - first:
+      33: 3300006
+    second: FacePlate
+  - first:
+      33: 3300008
+    second: HingesWings.Fixed
+  - first:
+      33: 3300010
+    second: HingesWings.Movable
+  - first:
+      33: 3300012
+    second: StrikePlate
+  - first:
+      33: 3300014
+    second: WoodenKnocker
+  - first:
+      33: 3300016
+    second: WoodenSquaredDoor
+  - first:
+      33: 3300018
+    second: EscutcheonPlate_Above
+  - first:
+      33: 3300020
+    second: EscutcheonPlate_Above_Knob
+  - first:
+      33: 3300022
+    second: EscutcheonPlate_Bellow
+  - first:
+      33: 3300024
+    second: HingesWings_Fixed
+  - first:
+      43: 4300000
+    second: WoodenKnocker
+  - first:
+      43: 4300002
+    second: StrikePlate
+  - first:
+      43: 4300004
+    second: HingesWings.Movable
+  - first:
+      43: 4300006
+    second: WoodenSquaredDoor
+  - first:
+      43: 4300008
+    second: FacePlate
+  - first:
+      43: 4300010
+    second: EscutcheonPlate.Above
+  - first:
+      43: 4300012
+    second: EscutcheonPlate.Above.Knob
+  - first:
+      43: 4300014
+    second: EscutcheonPlate.Bellow
+  - first:
+      43: 4300016
+    second: HingesWings.Fixed
+  - first:
+      43: 4300018
+    second: HingesWings_Fixed
+  - first:
+      43: 4300020
+    second: HingesWings_Movable
+  - first:
+      43: 4300022
+    second: EscutcheonPlate_Above
+  - first:
+      43: 4300024
+    second: EscutcheonPlate_Above_Knob
+  - first:
+      43: 4300026
+    second: EscutcheonPlate_Bellow
+  - first:
+      74: 7400000
+    second: HingesWings.Movable.Armature|HingesWings.Movable.ArmatureAction
+  - first:
+      74: 7400002
+    second: Default Take
+  - first:
+      74: 7400004
+    second: HingesWings_Movable_ArmatureAction
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      108: 10800000
+    second: Lamp
+  - first:
+      137: 13700000
+    second: HingesWings_Movable
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -169,7 +350,7 @@ ModelImporter:
       name: knobMaterial_000__knob_png
     second: {fileID: 2100000, guid: 81f04558cb0b73b4e877fb94e5fabdb2, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -178,6 +359,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -202,25 +384,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -229,10 +420,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -242,13 +433,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
