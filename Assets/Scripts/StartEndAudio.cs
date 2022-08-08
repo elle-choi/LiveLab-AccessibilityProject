@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartEndAudio : MonoBehaviour
-{
-   
-    public AudioSource startSound;
-    public AudioSource endSound;
+{ 
+    public AudioSource FiveStepStart;
+    public AudioSource One;
+    public AudioSource Two;
+    public AudioSource Three;
+    public AudioSource Four;
+    public AudioSource Five;
+    public AudioSource EndStairs;
 
     private void Start()
     {
@@ -24,13 +28,39 @@ public class StartEndAudio : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo))
             {
-                if (hitInfo.collider.gameObject.tag == "startSound")
+                if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
                 {
-                    startSound.Play(0);
+                    FiveStepStart.Play(0);
                 }
-                if (hitInfo.collider.gameObject.tag == "endSound")
+
+                if (hitInfo.collider.gameObject.tag == "One")
                 {
-                    endSound.Play(0);
+                    One.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Two")
+                {
+                    Two.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Three")
+                {
+                    Three.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Four")
+                {
+                   Four.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Five")
+                {
+                    Five.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "EndStairs")
+                {
+                    EndStairs.Play(0);
                 }
             }
         }
