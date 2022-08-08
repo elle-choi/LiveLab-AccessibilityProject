@@ -15,53 +15,59 @@ public class StartEndAudio : MonoBehaviour
 
     private void Start()
     {
-        //startSound = GetComponent<AudioSource>();
-        //endSound = GetComponent<AudioSource>();
+
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
+            RaycastOnStairs();
+        }
+    }
 
-            if (Physics.Raycast(ray, out hitInfo))
+    void RaycastOnStairs()
+    {
+        // for the "final" version of your code,
+        // you'll just modify this ray function 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
             {
-                if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
-                {
-                    FiveStepStart.Play(0);
-                }
+                FiveStepStart.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "One")
-                {
-                    One.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "One")
+            {
+                One.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "Two")
-                {
-                    Two.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "Two")
+            {
+                Two.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "Three")
-                {
-                    Three.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "Three")
+            {
+                Three.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "Four")
-                {
-                   Four.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "Four")
+            {
+                Four.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "Five")
-                {
-                    Five.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "Five")
+            {
+                Five.Play(0);
+            }
 
-                if (hitInfo.collider.gameObject.tag == "EndStairs")
-                {
-                    EndStairs.Play(0);
-                }
+            if (hitInfo.collider.gameObject.tag == "EndStairs")
+            {
+                EndStairs.Play(0);
             }
         }
     }
