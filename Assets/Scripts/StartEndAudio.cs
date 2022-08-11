@@ -31,8 +31,10 @@ public class StartEndAudio : MonoBehaviour
         // for the "final" version of your code,
         // you'll just modify this ray function 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
-        RaycastHit hitInfo;
+        // instead of mouseposition make a ray point straight down from the player (the main camera)
+        // 
 
+        RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo))
         {
             if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
