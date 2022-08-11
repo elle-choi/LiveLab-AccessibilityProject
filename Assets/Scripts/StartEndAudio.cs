@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartEndAudio : MonoBehaviour
-{ 
+{
     public AudioSource FiveStepStart;
     public AudioSource One;
     public AudioSource Two;
@@ -20,22 +20,32 @@ public class StartEndAudio : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastOnStairs();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    RaycastOnStairs();
+        //}
+    }
+
+    private void FixedUpdate()
+    {
+        RaycastOnStairs();
     }
 
     void RaycastOnStairs()
     {
         // for the "final" version of your code,
         // you'll just modify this ray function 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
         RaycastHit hitInfo;
 
+        //if (Physics.Raycast(transform.position, transform.forward, 10))
+        //   print("There is something in front of the object!");
 
-        if (Physics.Raycast(ray, out hitInfo))
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, Mathf.Infinity))
         {
+            Debug.DrawLine(transform.position, hitInfo.point, Color.blue);
+
             if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
             {
                 FiveStepStart.Play(0);
@@ -179,3 +189,4 @@ public class StartEndAudio : MonoBehaviour
         */
 
     }
+}
