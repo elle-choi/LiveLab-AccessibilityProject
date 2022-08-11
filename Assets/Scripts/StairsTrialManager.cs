@@ -121,7 +121,10 @@ public class StairsTrialManager : MonoBehaviour
         isWalkingClockwise = false;
 
         StairConditionArray = new int[] {1,2,3,4,5,6};   // stair condition array 
-        RandomizeConditionArray();                  // randomized stair condition array
+        RandomizeConditionArray();  
+        // randomized stair condition array
+
+        // StairConditionArray[cur_trial] <- tells you what the current condition is
     }
 
 
