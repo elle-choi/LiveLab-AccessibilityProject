@@ -5,6 +5,8 @@ using UnityEngine;
 public class AudioFeature : MonoBehaviour
 {
     public AudioSource FiveStepStart;
+    public AudioSource SevenStepStart;
+    public AudioSource NineStepStart;
     public AudioSource One;
     public AudioSource Two;
     public AudioSource Three;
@@ -40,12 +42,24 @@ public class AudioFeature : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, Mathf.Infinity))
         {
             Debug.DrawLine(transform.position, hitInfo.point, Color.blue);
+            int num = 0;
+            Debug.Log("DON'T FORGET TO ASSIGN NUMBER FOR STAIR ASSIST RAYCAST");
 
             if (num % 2 == 0)
             {
                 if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
                 {
                     FiveStepStart.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "SevenStepTrigger")
+                {
+                    SevenStepStart.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "NineStepTrigger")
+                {
+                    NineStepStart.Play(0);
                 }
 
                 if (hitInfo.collider.gameObject.tag == "One")
