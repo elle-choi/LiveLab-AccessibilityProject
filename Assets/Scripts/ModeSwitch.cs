@@ -9,10 +9,12 @@ public class ModeSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V)) // also KeyCode for now but to interact with UI, do I do
+                                         // GetButtonDown? 
         {
             // FIXME How do I know which inputs to assign this to?
-            // I can't drag & drop because this changes depending on 5, 7, 9
+            // I can't drag & drop because this changes depending on 5, 7, 9 (dynamic stairs)
+            // 1 possibility: Do this in the big scrip that Haley scripted? 
             startendHighlights.SetActive(true);
             stairHighlights.SetActive(true);
         }

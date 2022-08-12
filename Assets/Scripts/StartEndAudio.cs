@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StartEndAudio : MonoBehaviour
 {
@@ -17,21 +16,19 @@ public class StartEndAudio : MonoBehaviour
     public AudioSource Nine;
     public AudioSource EndStairs;
 
-    List<string> evenAudio = new List<string>();        
-    List<string> oddAudio = new List<string>();
-   
-    /*
+    
     public string[] evenAudioFeatures = new string[] { "FiveStepTrigger", "One", "Two", "Three",
                                                     "Four", "Five", "Six", "Seven", "Eight",
                                                     "Nine", "EndStairs"};
 
     public string[] oddAudioFeatures = new string[11];
-    */
-    
+
+
+
 
     private void Start()
     {
-
+        FlipArray();
     }
 
     private void Update()
@@ -44,11 +41,14 @@ public class StartEndAudio : MonoBehaviour
         */
     }
 
-    private void FlipList()
+    private void FlipArray()
     {
+        int evenArrayLength = evenAudioFeatures.Length;
+
         for (int i = 0; i < evenAudioFeatures.Length; i++)
         {
-            evenAudio.Add(evenAudioFeatures[i]); 
+            oddAudioFeatures[i] = evenAudioFeatures[evenArrayLength-1];
+            evenArrayLength--;
         }
     }
 
