@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StartEndAudio : MonoBehaviour
 {
@@ -11,20 +10,48 @@ public class StartEndAudio : MonoBehaviour
     public AudioSource Three;
     public AudioSource Four;
     public AudioSource Five;
+    public AudioSource Six;
+    public AudioSource Seven;
+    public AudioSource Eight;
+    public AudioSource Nine;
     public AudioSource EndStairs;
+
+    
+    public string[] evenAudioFeatures = new string[] { "FiveStepTrigger", "One", "Two", "Three",
+                                                    "Four", "Five", "Six", "Seven", "Eight",
+                                                    "Nine", "EndStairs"};
+
+    public string[] oddAudioFeatures = new string[11];
+
+
+
 
     private void Start()
     {
-
+        FlipArray();
     }
 
     private void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    RaycastOnStairs();
-        //}
+        /* used when mouse is clicked to create a raycastxwww
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastOnStairs();
+        }
+        */
     }
+
+    private void FlipArray()
+    {
+        int evenArrayLength = evenAudioFeatures.Length;
+
+        for (int i = 0; i < evenAudioFeatures.Length; i++)
+        {
+            oddAudioFeatures[i] = evenAudioFeatures[evenArrayLength-1];
+            evenArrayLength--;
+        }
+    }
+
 
     private void FixedUpdate()
     {
@@ -33,14 +60,13 @@ public class StartEndAudio : MonoBehaviour
 
     void RaycastOnStairs()
     {
-        // for the "final" version of your code,
-        // you'll just modify this ray function 
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+        // For Mouse Position: 
+        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         RaycastHit hitInfo;
 
-        //if (Physics.Raycast(transform.position, transform.forward, 10))
-        //   print("There is something in front of the object!");
-
+        // FIXME: first problem: the first step trigger message differs
+        // possible solution: should we just make it constant for all 3 steps? to just StepTrigger?
 
         if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, Mathf.Infinity))
         {
@@ -76,45 +102,24 @@ public class StartEndAudio : MonoBehaviour
                 Five.Play(0);
             }
 
-            if (hitInfo.collider.gameObject.tag == "EndStairs")
+            if(hitInfo.collider.gameObject.tag == "Six")
             {
-                EndStairs.Play(0);
-            }
-        }
-
-        // wasn't sure what the tag was
-        // for 5-Step stairs but do I need this all for 7 and 9?
-        /* 
-        if (Collider.gameobject.tag == "Up")
-        {
-            if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
-            {
-                FiveStepStart.Play(0);
+                Six.Play(0);
             }
 
-            if (hitInfo.collider.gameObject.tag == "One")
+            if(hitInfo.collider.gameObject.tag == "Seven")
             {
-                One.Play(0);
+                Seven.Play(0);
             }
 
-            if (hitInfo.collider.gameObject.tag == "Two")
+            if(hitInfo.collider.gameObject.tag == "Eight")
             {
-                Two.Play(0);
+                Eight.Play(0);
             }
 
-            if (hitInfo.collider.gameObject.tag == "Three")
+            if(hitInfo.collider.gameObject.tag == "Nine")
             {
-                Three.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Four")
-            {
-                Four.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Five")
-            {
-                Five.Play(0);
+                Nine.Play(0);
             }
 
             if (hitInfo.collider.gameObject.tag == "EndStairs")
@@ -122,71 +127,6 @@ public class StartEndAudio : MonoBehaviour
                 EndStairs.Play(0);
             }
         }
-        if (Collider.gameobject.tag == "Down")
-        {
-            if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
-            {
-                EndStairs.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "One")
-            {
-                Five.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Two")
-            {
-                Four.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Three")
-            {
-                Three.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Four")
-            {
-                Two.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "Five")
-            {
-                One.Play(0);
-            }
-
-            if (hitInfo.collider.gameObject.tag == "EndStairs")
-            {
-                FiveStepStart.Play(0);
-            }
-        }
-
-    }
-
-    /*
-    private void OnMouseEnter()
-    {
-        
-    }
-    */
-
-        /*
-        private void Update()
-        {
-            // FIXME: temporary code for now
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                //Debug.Log("alpha 1 pressed");
-                startSound.Play(0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                endSound.Play(0);
-            }
-
-            // FIXME: when bottom platform hit, start audio play; last step hit, end audio play 
-        }
-        */
 
     }
 }
