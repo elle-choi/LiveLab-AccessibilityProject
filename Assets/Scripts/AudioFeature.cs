@@ -18,6 +18,8 @@ public class AudioFeature : MonoBehaviour
     public AudioSource Nine;
     public AudioSource EndStairs;
 
+    int num;
+
 
     private void Start()
     {
@@ -36,16 +38,14 @@ public class AudioFeature : MonoBehaviour
 
         RaycastHit hitInfo;
 
-        // FIXME: first problem: the first step trigger message differs
-        // possible solution: should we just make it constant for all 3 steps? to just StepTrigger?
+        // Case 1, 3, 5
+        // Original 5, 7, 9 Step Stairs 
 
         if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, Mathf.Infinity))
         {
             Debug.DrawLine(transform.position, hitInfo.point, Color.blue);
-            int num = 0;
-            Debug.Log("DON'T FORGET TO ASSIGN NUMBER FOR STAIR ASSIST RAYCAST");
 
-            if (num % 2 == 0)
+            if (num % 2 != 0)
             {
                 if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
                 {
@@ -113,15 +113,100 @@ public class AudioFeature : MonoBehaviour
                 }
             }
 
-            // FIX ME: FLIPPING LIST & using if statements both don't work because
-            // it plays one when the tag is nine (would be the same with flipping the list)
-            // possible solution have it play the same for 1, 3, 5 cases
-            // and have separate lists or if staements for 2, 4, 6 cases (flipped) 
-            if (num % 2 != 0)
+            // Case 2 (Flipped 5 Step Stairs) 
+            if (num == 2)
             {
                 if (hitInfo.collider.gameObject.tag == "EndStairs")
                 {
                     FiveStepStart.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "One")
+                {
+                    Five.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Two")
+                {
+                    Four.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Three")
+                {
+                    Three.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Four")
+                {
+                    Two.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Five")
+                {
+                    One.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
+                {
+                    EndStairs.Play(0);
+                }
+            }
+
+            // Case 4 (Flipped 7 Step Stairs) 
+            if (num == 4)
+            {
+                if (hitInfo.collider.gameObject.tag == "EndStairs")
+                {
+                    SevenStepStart.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "One")
+                {
+                    Seven.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Two")
+                {
+                    Six.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Three")
+                {
+                    Five.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Four")
+                {
+                    Four.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Five")
+                {
+                    Three.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Six")
+                {
+                    Two.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "Seven")
+                {
+                    One.Play(0);
+                }
+
+                if (hitInfo.collider.gameObject.tag == "SevenStepTrigger")
+                {
+                    EndStairs.Play(0);
+                }
+            }
+
+            // Case 6 (Flipped 9 Step Stairs) 
+            if (num == 6)
+            {
+                if (hitInfo.collider.gameObject.tag == "EndStairs")
+                {
+                    NineStepStart.Play(0);
                 }
 
                 if (hitInfo.collider.gameObject.tag == "One")
@@ -169,12 +254,11 @@ public class AudioFeature : MonoBehaviour
                     One.Play(0);
                 }
 
-                if (hitInfo.collider.gameObject.tag == "FiveStepTrigger")
+                if (hitInfo.collider.gameObject.tag == "NineStepTrigger")
                 {
                     EndStairs.Play(0);
                 }
             }
-            
         }
     }
 }
