@@ -1,0 +1,3 @@
+SubjectID, ScotomaCondition, AssistiveCondition, Height, Gender, Age
+elletest, 1, 0, , , 
+Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime

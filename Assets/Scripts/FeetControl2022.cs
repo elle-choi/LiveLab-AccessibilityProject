@@ -18,10 +18,10 @@ public class FeetControl2022 : MonoBehaviour
 {
     // Set in inspector 
     public GameObject L_Foot_Parent, R_Foot_Parent;
-    public Transform L_Tracked_Object, R_Tracked_Object;
+    public Transform L_Tracked_Object, R_Tracked_Object;//, Head_Tracked_Object;
 
     // admit de feet  
-    public Transform L_Foot_Model, R_Foot_Model;
+    public Transform L_Foot_Model, R_Foot_Model;//, Head_Model; // Head_Model = Camera
 
     // raycast vars
     Vector3 bufferHeight;           // bufferHeight: to translate start of raycast of foot upwards for accuracy 
@@ -57,7 +57,7 @@ public class FeetControl2022 : MonoBehaviour
 
 
         // Set constraints for vertical translation
-        //isHeightTranslationFrozen = false;
+        isHeightTranslationFrozen = false;
         frozenFloorHeight = 0f;
         bufferHeight = new Vector3(0, 1, 0);
         noFallHeight = 0.5f;
@@ -79,7 +79,10 @@ public class FeetControl2022 : MonoBehaviour
         RaycastHit hitLeft;
         if (!isHeightTranslationFrozen && Physics.Raycast(L_Tracked_Object.transform.position + bufferHeight, transform.TransformDirection(Vector3.down), out hitLeft, Mathf.Infinity, layerMask))
         {
-            L_Foot_Model.transform.position = new Vector3(L_Tracked_Object.position.x, L_Tracked_Object.position.y, L_Tracked_Object.position.z) + L_Position_Displacement;
+            // MyTranslateHeight.FloorHeight
+            Vector3 localHit = transform.InverseTransformPoint(hitLeft.point);
+            //Debug.Log(localHit.y);
+            L_Foot_Model.transform.position = new Vector3(L_Tracked_Object.position.x, (L_Tracked_Object.position.y + localHit.y), L_Tracked_Object.position.z) + L_Position_Displacement;
             Debug.DrawLine(L_Tracked_Object.transform.position + bufferHeight, hitLeft.point, Color.red);
         }
         else
@@ -90,7 +93,8 @@ public class FeetControl2022 : MonoBehaviour
         RaycastHit hitRight;
         if (!isHeightTranslationFrozen && Physics.Raycast(R_Tracked_Object.transform.position + bufferHeight, transform.TransformDirection(Vector3.down), out hitRight, Mathf.Infinity, layerMask))
         {
-            R_Foot_Model.transform.position = new Vector3(R_Tracked_Object.position.x, R_Tracked_Object.position.y, R_Tracked_Object.position.z) + R_Position_Displacement;
+            Vector3 localHit = transform.InverseTransformPoint(hitRight.point);
+            R_Foot_Model.transform.position = new Vector3(R_Tracked_Object.position.x, (R_Tracked_Object.position.y + localHit.y), R_Tracked_Object.position.z) + R_Position_Displacement;
             Debug.DrawLine(R_Tracked_Object.transform.position + bufferHeight, hitRight.point, Color.red);
         }
         else
@@ -113,17 +117,21 @@ public class FeetControl2022 : MonoBehaviour
         {
             if (L_Foot_Height < R_Foot_Height - epsilon) // if left foot is lower
             {
-                transform.position = new Vector3(0, Mathf.Lerp(transform.position.y, L_Foot_Height - trackerDisplacement.y, speed), 0);
+                transform.position = new Vector3(0, Mathf.Lerp(Head_Tracked_Object.transform.position.y, L_Foot_Height - L_Position_Displacement.y, speed), 0);
             }
             else if (L_Foot_Height > R_Foot_Height + epsilon) // if right foot is lower
             {
-                transform.position = new Vector3(0, Mathf.Lerp(transform.position.y, R_Foot_Height - trackerDisplacement.y, speed), 0);
+                transform.position = new Vector3(0, Mathf.Lerp(Head_Tracked_Object.transform.position.y, R_Foot_Height - R_Position_Displacement.y, speed), 0);
             }
             else // else
             {
-                transform.position = new Vector3(0, Mathf.Lerp(transform.position.y, L_Foot_Height - trackerDisplacement.y, speed), 0);
+                transform.position = new Vector3(0, Mathf.Lerp(Head_Tracked_Object.transform.position.y, L_Foot_Height - L_Position_Displacement.y, speed), 0);
             }
 
+        }
+        else
+        {
+            transform.position = Head_Tracked_Object.transform.position;
         }*/
 
 

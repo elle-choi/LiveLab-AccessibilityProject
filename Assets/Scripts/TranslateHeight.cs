@@ -9,7 +9,7 @@ public class TranslateHeight : MonoBehaviour
     private float frozenFloorHeight;
     private bool isHeightTranslationFrozen;
     private float speed;            // speed: to smooth lerp of player translation up and down
-    float FloorHeight;
+    public float FloorHeight;
     Vector3 bufferHeight;
     Camera m_MainCamera;
 

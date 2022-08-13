@@ -1,0 +1,9 @@
+SubjectID, ScotomaCondition, AssistiveCondition, Height, Gender, Age
+elle222, 1, 0, , , 
+Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime
+1, [3,4,2,6,5,1], 3, 0, 10.51815
+2, [3,4,2,6,5,1], 4, 0, 15.79748
+3, [3,4,2,6,5,1], 2, 0, 14.05742
+4, [3,4,2,6,5,1], 6, 0, 19.16854
+5, [3,4,2,6,5,1], 5, 0, 18.8661
+6, [3,4,2,6,5,1], 1, 0, 15.85167

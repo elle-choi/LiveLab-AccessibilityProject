@@ -10,12 +10,13 @@ using System;
 public class DataManager : MonoBehaviour
 {
     // References to other Scripts. Keep DataManaer & TrialManager on the same GO. 
-    private TrialManager MyTrialManager;
-    public MeasurePerformance MyPerformanceMeasures;
+    private StairsTrialManager MyTrialManager;
+    //public MeasurePerformance MyPerformanceMeasures;
 
     // UI / Filewriter vars
     public string filename;
     public GameObject StartUI;
+    public GameObject ScotomaParent; 
     public List<GameObject> inputFields;
 
     // Participant info to write
@@ -25,7 +26,7 @@ public class DataManager : MonoBehaviour
     string gender;
     // Experiment info to write
     string scotomaCondition;
-    string assistiveCondition;
+    public int assistiveCondition;
 
     // HALEY - CHANGE THIS
     // References to left and right eye cameras. Used to set low vision simulation shaders.  
@@ -37,8 +38,8 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         // Get trial and task performance script references 
-        MyTrialManager = GetComponent<TrialManager>();
-        MyPerformanceMeasures = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MeasurePerformance>();
+        MyTrialManager = GetComponent<StairsTrialManager>();
+        //MyPerformanceMeasures = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MeasurePerformance>();
 
         // Get UI gameojbect reference
         StartUI = GameObject.FindGameObjectWithTag("UI");
@@ -49,7 +50,7 @@ public class DataManager : MonoBehaviour
         height = "";
         gender = "";
         scotomaCondition = "0";
-        assistiveCondition = "0";
+        assistiveCondition = 0;
     }
 
 
@@ -71,9 +72,9 @@ public class DataManager : MonoBehaviour
                 sw.WriteLine(subjectId + ", " + scotomaCondition + ", " + assistiveCondition + ", " + height + ", " + gender + ", " + age);
 
                 // Write second header for Data Labels 
-                sw.WriteLine("Trial, [ConditionArray], Condition, " +
-                    "StepErrorLeft, StepErrorRight, " +     // step  measures        
-                    "TravelTime, ResponseTime");	        // time measures 
+                sw.WriteLine("Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime"); // +
+                    //"StepErrorLeft, StepErrorRight, " +     // step  measures        
+                   // "TravelTime, ResponseTime");	        // time measures 
                 sw.Close();
             }
         }
@@ -112,24 +113,19 @@ public class DataManager : MonoBehaviour
 
         ////////////////////////////////////////////////////////////////////////////////
         // HALEY - UPDATE THIS 
-        ////////////////////////////////////////////////////////////////////////////////
-       // lefteye.GetComponent<OpaqueMaskEffect>().SetMask(option.value);
-       // righteye.GetComponent<OpaqueMaskEffect>().SetMask(option.value);        
+        ////////////////////////////////////////////////////////////////////////////////        
+        ScotomaParent.transform.GetChild(option.value).GetComponent<MeshRenderer>().enabled=true; 
+
     }
 
     // Select Assisitive Condition based on dropdown option index
     // option.value = an integer
     public void SetAssistiveCondition(Dropdown option)
     {
-        assistiveCondition = "" + option.value; 
+        assistiveCondition = option.value; 
         Debug.Log("Assisitve: " + assistiveCondition);
 
-        ////////////////////////////////////////////////////////////////////////////////
-        // @ELLE.. Add your code to switch between "accessibility methods" here !! 
-        //
-        //
-        //
-        ////////////////////////////////////////////////////////////////////////////////
+        // USE THIS INFO IN STAIRSTRIALMANAGER.CS 
     }
 
 
@@ -147,58 +143,42 @@ public class DataManager : MonoBehaviour
     public void WriteTrialVariables()
     {
         // et current trial number and path information 
-        int cur_trial = MyTrialManager.trial_count;
-        int[] myPathArray = MyTrialManager.GetPathArray();
-        float[] myPathDistanceArray = MyTrialManager.GetPathDistanceArray();
+        int[] myConditionArray = MyTrialManager.GetConditionArray();
+        int cur_trial = MyTrialManager.currentTrial;
+        int currentStairCondition = MyTrialManager.GetCurrentStairCondition();
 
-        // Write Trial Num, Target Index Array Length, & Target Index Array
         using (StreamWriter sw = File.AppendText(filename))
         {
             // Write current trial number
             sw.Write(cur_trial + ", [");
 
-            // Write PathArray
-            sw.Write(myPathArray[0]);
-            for (int i = 1; i < myPathArray.Length; i++)
-                sw.Write("," + myPathArray[i]);
-            sw.Write("], [");
+            // Write Condition Variables
+            sw.Write(myConditionArray[0]);
+            for (int i = 1; i < myConditionArray.Length; i++)
+                sw.Write("," + myConditionArray[i]);
+            sw.Write("], " + currentStairCondition + ", " + assistiveCondition + ", ");
 
-            // Write PathDistanceArray
-            sw.Write(myPathDistanceArray[0]);
-            for (int i = 1; i < myPathDistanceArray.Length; i++)
-                sw.Write("," + myPathDistanceArray[i]);
-            sw.Write("], ");
+
             sw.Close();
         }      
     }
+    
 
-    // For each trial, write angle measures. Called by TrialManager.cs
-    public void WriteAngleData(int pathOrigin, int pathEnd)
+    // For each trial, write  time measures. Called by StairTrialManager.cs
+    public void WriteTimeData(float traversal_time)
     {
-        string angle_measures = MyPerformanceMeasures.GetAngleMeasures(pathOrigin, pathEnd);
+        //int target_id = MyTrialManager.GetTargetIndex();
+        //string distance_measures = MyPerformanceMeasures.GetDistanceMeasures(pathOrigin, pathEnd, previousPlayerPosition);
+        //string time_measures = MyTrialManager.GetTimeMeasures();
+        string time_measure = "" + traversal_time; 
 
         using (StreamWriter sw = File.AppendText(filename))
         {
-            sw.Write("" + angle_measures + ", ");
-        }
-    }
-
-    // For each trial, write distance and time measures. Called by TrialManager.cs
-    public void WriteDistanceTimeData(int pathOrigin, int pathEnd, Vector3 previousPlayerPosition)
-    {
-        int target_id = MyTrialManager.GetTargetIndex();
-        string distance_measures = MyPerformanceMeasures.GetDistanceMeasures(pathOrigin, pathEnd, previousPlayerPosition);
-        string time_measures = MyTrialManager.GetTimeMeasures();
-
-        using (StreamWriter sw = File.AppendText(filename))
-        {
-            sw.Write("" + distance_measures + ", "
-                + time_measures);
+            sw.Write("" + time_measure);
             sw.Write("\n");
         }
 
     }
-    
 
 
 }

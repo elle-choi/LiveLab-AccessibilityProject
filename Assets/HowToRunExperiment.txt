@@ -1,0 +1,44 @@
+
+
+BEFORE Experiment
+- Turn on SteamVR
+- Turn on your tracking pucks. Stap to feet
+- Calibrate Eye Tracking 
+	- Hit Menu button (button with squares on it) on the Vive Controller
+	- On the bottom left of the Menu. Select "Vive Eye". It is the 4th icon from the left.
+	- Follow directions to calibrate eye tracking 
+		- Step1: Adjust display so it is secure on your head
+		- Step2: Adjust knob to set IPD
+		- Step3: 5 point calibration - look at the dots! 
+	ProTip:  "Display VR View" in SteamVR helps to see what player sees
+	ProTip:  If eye tracking starts getting buggy... Calibrate again!! 
+
+BEFORE Experiment - IN UNITY
+- Selection UI experiment options
+- Ask participant to stand near green tape
+- Calibrate feet (Face far wall. Hit "C".)
+- Let them walk around for a second before starting (10 s - 1 min)
+
+
+DURING EXPERIMENT
+- Hit "Tab" when ready to show first/next stair.
+- Hit "Shift" to reset timer when needed
+- Hit "Enter" when they've reached the top of the stairs 
+
+-----------------------------------------------------
+
+
+PARTICIPANT 1
+  1. None		[None, Highlights]
+  2. Center		[Highlights, None]
+  3. Peripheral		[None, Highlights]
+
+PARTICIPANT 2
+  1. Peripheral		[Highlights, None]
+  2. None		[None, Highlights]
+  3. Center		[Highlights, None]
+
+PARTICIPANT 3 	
+  1. Central		[None, Highlights]
+  2. Peripheral		[None, Highlights]
+  3. None		[Highlights, None]

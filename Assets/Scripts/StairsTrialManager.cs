@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StairsTrialManager : MonoBehaviour
 {
+    public DataManager MyDataManager;
+    public AccessibilityFeatures MyAccessibilityFeatures;
+
     public Transform WallsParent;           // Walls parent needed to move dynamically in scene
     public GameObject InitialPlatform;       // Hide once cue_trial = 2
     Stair PreviousStair;                    // Stair struct instances to store useful information 
@@ -16,6 +19,11 @@ public class StairsTrialManager : MonoBehaviour
     public int totalTrials = 6;             // Total number of trials to complete. Set value here or in inspector
     public int currentTrial = 0;            // The current trial number (count)
     public int[] StairConditionArray;            // Array of conditions possible values: 1,2,3,4,5,6
+
+    float timer;
+    bool is_gameover;
+
+    public int activeAccessibilityFeature;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     class Stair
@@ -115,38 +123,121 @@ public class StairsTrialManager : MonoBehaviour
 
     public void Start()
     {
+        timer = 0f;
         currentTrial = 0;
         YSpawnOffset = 0f;
         ZSpawnOffset = 0f;
         isWalkingClockwise = false;
+        is_gameover = false;
+
 
         StairConditionArray = new int[] {1,2,3,4,5,6};   // stair condition array 
-        RandomizeConditionArray();  
-        // randomized stair condition array
+        RandomizeConditionArray();
+        // randomized stair condition array    
+        Debug.Log("Press Tab to spawn first stair. Press Shift to start the experiment timer.");
 
-        // StairConditionArray[cur_trial] <- tells you what the current condition is
-    }
-
+    }  
 
     public void Update()
     {
-        
+        timer += Time.deltaTime;
+
+
+        if (Input.anyKeyDown && is_gameover)
+        {
+            Debug.Log("Game over! Exit program.");
+            return;
+        }
+
+        // If RETURN is pressed AND a trial is over (the participant was finished the homing task)
+        if (Input.GetKeyDown(KeyCode.Return))
+        {           
+            RecordResponses();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("You reset the timer");
+            timer = 0f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            SpawnNextStair();
-            ScaleWalls();
-            MoveWalls();
+            NextTrial();
+            Debug.Log("Press Return when the participant has finished walking the stair.");
         }
 
     }
 
+    public void RecordResponses()
+    {
+        if (currentTrial == 0)
+            return;
+
+        Debug.Log("Traveral time recorded!");
+        MyDataManager.WriteTrialVariables();
+        MyDataManager.WriteTimeData(timer);
+
+
+        if (currentTrial == totalTrials)
+        {
+            is_gameover = true;
+        }
+
+    }
+
+    public void NextTrial()
+    {
+        SpawnNextStair();
+        SetAccessibilityFeature();
+        ScaleWalls();
+        MoveWalls();
+
+        timer = 0f;
+    }
+
+    public void SetAccessibilityFeature()
+    {
+        // use your condition index.. which is "MyDataManager.assistiveCondition"
+
+        // Show all highlights or hide them
+        Transform currentStair = transform.GetChild(transform.childCount - 1);
+        if (MyDataManager.assistiveCondition == 1)
+        {
+            // Do vision
+            MyAccessibilityFeatures.StairAllHighlights(currentStair, true);
+        }
+        else
+        {
+            MyAccessibilityFeatures.StairAllHighlights(currentStair, false);
+
+        }
+
+
+        if (MyDataManager.assistiveCondition == 2)
+        {
+            // Do audio
+            activeAccessibilityFeature = 2;
+        }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (activeAccessibilityFeature == 2 && !is_gameover)
+            if (currentTrial == 0)
+                MyAccessibilityFeatures.RaycastOnStairs(StairConditionArray[0]);
+            else
+                MyAccessibilityFeatures.RaycastOnStairs(StairConditionArray[currentTrial-1]);    
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Function to Spawn randomized stairs in a sequence 
     public void SpawnNextStair()
-    {
+    {     
 
-        if (currentTrial == totalTrials - 1)
+        if (is_gameover)
             return;
 
         GameObject spawnedStair; // temporary reference to new stair GO
@@ -257,7 +348,7 @@ public class StairsTrialManager : MonoBehaviour
                 ZSpawnOffset += currentZOffset;
             else
                 ZSpawnOffset -= currentZOffset;
-            spawn_position.z = ZSpawnOffset;
+            spawn_position.z = ZSpawnOffset;             
 
             //Debug.Log("NumSteps: [" + PreviousStair.numberOfSteps + ", " + numberOfSteps + "] .. ZOffset: " + temp);
             spawnedStair = Instantiate(ObjectsToSpawn[objectIndex], spawn_position, spawn_orientation, transform);
@@ -301,6 +392,15 @@ public class StairsTrialManager : MonoBehaviour
 
     }
 
+    public int[] GetConditionArray()
+    {
+        return StairConditionArray;
+    }
+
+    public int GetCurrentStairCondition()
+    {
+        return StairConditionArray[currentTrial-1];
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -327,15 +427,24 @@ public class StairsTrialManager : MonoBehaviour
     {
         // Offset Walls parent Y and Z to compensate for stair spawning (up/down = Y , lateral drift = Z) 
         float ypos = transform.GetChild(transform.childCount - 1).position.y;
-        WallsParent.position = new Vector3(0f, ypos, ZSpawnOffset);     // HALEY: MAY  NEED TO MOVE THIS ELSWHERE FOR VR
+        WallsParent.transform.position = transform.position + new Vector3(0f, ypos, ZSpawnOffset);
+        //WallsParent.position = new Vector3(0f, ypos, ZSpawnOffset);     // HALEY: MAY  NEED TO MOVE THIS ELSWHERE FOR VR
 
         // Ofset position of near and far Z walls to compensate for variable wall lengths
         // Update the position of the near and far outer walls (Z +,-) based on current stair length 
         Transform ZWallsParent = WallsParent.GetChild(1); // Name: Walls Z
         ZWallsParent.GetChild(0).localPosition = new Vector3(0f, 0f, NextStair.stairLength / 2f);    // Z+ 
         ZWallsParent.GetChild(1).localPosition = new Vector3(0f, 0f, -NextStair.stairLength / 2f);   // Z-
+
+        // flip blocking walls for each trial      
+        ReverseBlockingWalls(); 
     }
 
+    void ReverseBlockingWalls()
+    {
+        Transform BlockingWallsParent = WallsParent.GetChild(3);
+        BlockingWallsParent.eulerAngles = BlockingWallsParent.eulerAngles + 180f * Vector3.up; // what the new angles should be
+    }
 
 
 

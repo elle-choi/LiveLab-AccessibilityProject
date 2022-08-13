@@ -6,7 +6,7 @@ using System;
 public class TrialManager : MonoBehaviour
 {
     // References to other Scripts. Keep DataManaer & TrialManager on the same GO. 
-    private DataManager MyDataManager;
+    public  DataManager MyDataManager;
 
 
     // References to Game Objects and their properties. 
@@ -98,7 +98,7 @@ public class TrialManager : MonoBehaviour
         {
                 Debug.Log("Angle Recorded. Now, walk to the green pole (the path origin). Press Return when done.");
                 angle_response_time = timer;
-                MyDataManager.WriteAngleData(PathArray[0], PathArray[2]);
+                //MyDataManager.WriteAngleData(PathArray[0], PathArray[2]);
                 playerPositionAtPathEnd = Camera.main.transform.position; // Used to calculate distance player walked from path end to origin
                 timer = 0f;
                 response_phase += 1; 
@@ -111,7 +111,7 @@ public class TrialManager : MonoBehaviour
 
             // Record data
             distance_response_time = timer;
-            MyDataManager.WriteDistanceTimeData(PathArray[0], PathArray[2], playerPositionAtPathEnd);
+            //MyDataManager.WriteDistanceTimeData(PathArray[0], PathArray[2], playerPositionAtPathEnd);
 
             // Update trial counters and reset experiment variables
             trial_count++;
