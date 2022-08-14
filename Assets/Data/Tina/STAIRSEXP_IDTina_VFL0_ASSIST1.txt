@@ -1,0 +1,8 @@
+SubjectID, ScotomaCondition, AssistiveCondition, Height, Gender, Age
+Tina, 0, 1, 5'4, Female, 21
+Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime
+1, [2,3,1,6,5,4], 2, 1, 17.17073
+2, [2,3,1,6,5,4], 3, 1, 15.29249
+3, [2,3,1,6,5,4], 1, 1, 24.04559
+5, [2,3,1,6,5,4], 5, 1, 25.90661
+6, [2,3,1,6,5,4], 4, 1, 25.18617

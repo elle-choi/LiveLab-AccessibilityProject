@@ -1,4 +1,0 @@
-SubjectID, ScotomaCondition, AssistiveCondition, Height, Gender, Age
-Haley2, 0, 1, , , 
-Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime
-1, [5,1,4,3,2,6], 5, 1, 33.45579

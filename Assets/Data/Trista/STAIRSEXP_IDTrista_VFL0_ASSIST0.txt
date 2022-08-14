@@ -1,0 +1,8 @@
+SubjectID, ScotomaCondition, AssistiveCondition, Height, Gender, Age
+Trista, 0, 0, 5'5, Female, 21
+Trial, [ConditionArray], StairCondition, AssistCondition , TravelTime
+1, [3,6,1,4,5,2], 3, 0, 10.97784
+2, [3,6,1,4,5,2], 6, 0, 8.44875
+4, [3,6,1,4,5,2], 4, 0, 11.13717
+5, [3,6,1,4,5,2], 5, 0, 9.363415
+6, [3,6,1,4,5,2], 2, 0, 10.49285
